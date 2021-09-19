@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\rmtags.dir/objects.a
+C:\msys64\mingw64\bin\ar.exe cr CMakeFiles\rmtags.dir/objects.a @CMakeFiles\rmtags.dir\objects1.rsp
+C:\msys64\mingw64\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\rmtags.dir/objects.a -Wl,--no-whole-archive -o rmtags.exe -Wl,--out-implib,librmtags.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\rmtags.dir\linklibs.rsp

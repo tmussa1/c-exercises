@@ -14,7 +14,10 @@ int main() {
     int bufferLength = 255;
     char buffer[bufferLength];
 
-    filePointer = fopen("D:\\myprog.c", "r"); // TODO - don't hardcode this, take out spaces
+    filePointer = fopen("D:\\myprog.c", "r");
+    // TODO - don't hardcode this, take out spaces
+    // TODO - move them to helper, how to pass args, how to mkdir in server and where
+    // TODO - 30 lines per func
 
     while(fgets(buffer, bufferLength, filePointer))
     {
