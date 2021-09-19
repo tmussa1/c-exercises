@@ -1,0 +1,418 @@
+TR=820;dir=i;day=m-f;TI=14:06;stn=back bay;Line=providence
+TR=820;dir=i;day=m-f;TI=14:11;stn=south station;Line=providence
+TR=821;dir=o;day=m-f;TI=16:30;stn=south station;Line=providence
+TR=821;dir=o;day=m-f;TI=16:35;stn=back bay;Line=providence
+TR=821;dir=o;day=m-f;TI=16:39;stn=ruggles;Line=providence
+TR=821;dir=o;day=m-f;TI=16:53;stn=route 128;Line=providence
+TR=821;dir=o;day=m-f;TI=17:01;stn=sharon;Line=providence
+TR=821;dir=o;day=m-f;TI=17:09;stn=mansfield;Line=providence
+TR=821;dir=o;day=m-f;TI=17:17;stn=attleboro;Line=providence
+TR=821;dir=o;day=m-f;TI=17:27;stn=south attleboro;Line=providence
+TR=821;dir=o;day=m-f;TI=17:37;stn=providence;Line=providence
+TR=821;dir=o;day=m-f;TI=17:53;stn=tf green airport;Line=providence
+TR=821;dir=o;day=m-f;TI=18:09;stn=wickford junction;Line=providence
+TR=822;dir=i;day=m-f;TI=13:25;stn=wickford junction;Line=providence
+TR=822;dir=i;day=m-f;TI=13:39;stn=tf green airport;Line=providence
+TR=822;dir=i;day=m-f;TI=13:55;stn=providence;Line=providence
+TR=822;dir=i;day=m-f;TI=14:06;stn=south attleboro;Line=providence
+TR=822;dir=i;day=m-f;TI=14:16;stn=attleboro;Line=providence
+TR=822;dir=i;day=m-f;TI=14:26;stn=mansfield;Line=providence
+TR=822;dir=i;day=m-f;TI=14:35;stn=sharon;Line=providence
+TR=822;dir=i;day=m-f;TI=14:43;stn=route 128;Line=providence
+TR=822;dir=i;day=m-f;TI=14:48;stn=hyde park;Line=providence
+TR=822;dir=i;day=m-f;TI=14:57;stn=back bay;Line=providence
+TR=822;dir=i;day=m-f;TI=15:02;stn=south station;Line=providence
+TR=823;dir=o;day=m-f;TI=16:55;stn=south station;Line=providence
+TR=823;dir=o;day=m-f;TI=17:00;stn=back bay;Line=providence
+TR=823;dir=o;day=m-f;TI=17:04;stn=ruggles;Line=providence
+TR=823;dir=o;day=m-f;TI=17:18;stn=route 128;Line=providence
+TR=823;dir=o;day=m-f;TI=17:26;stn=sharon;Line=providence
+TR=823;dir=o;day=m-f;TI=17:34;stn=mansfield;Line=providence
+TR=823;dir=o;day=m-f;TI=17:44;stn=attleboro;Line=providence
+TR=823;dir=o;day=m-f;TI=17:57;stn=south attleboro;Line=providence
+TR=823;dir=o;day=m-f;TI=18:07;stn=providence;Line=providence
+TR=824;dir=i;day=m-f;TI=15:00;stn=providence;Line=providence
+TR=824;dir=i;day=m-f;TI=15:11;stn=south attleboro;Line=providence
+TR=824;dir=i;day=m-f;TI=15:21;stn=attleboro;Line=providence
+TR=824;dir=i;day=m-f;TI=15:31;stn=mansfield;Line=providence
+TR=824;dir=i;day=m-f;TI=15:40;stn=sharon;Line=providence
+TR=824;dir=i;day=m-f;TI=15:47;stn=canton junction;Line=providence
+TR=824;dir=i;day=m-f;TI=15:52;stn=route 128;Line=providence
+TR=824;dir=i;day=m-f;TI=15:57;stn=hyde park;Line=providence
+TR=824;dir=i;day=m-f;TI=16:06;stn=back bay;Line=providence
+TR=824;dir=i;day=m-f;TI=16:11;stn=south station;Line=providence
+TR=825;dir=o;day=m-f;TI=17:40;stn=south station;Line=providence
+TR=825;dir=o;day=m-f;TI=17:45;stn=back bay;Line=providence
+TR=825;dir=o;day=m-f;TI=17:49;stn=ruggles;Line=providence
+TR=825;dir=o;day=m-f;TI=18:07;stn=sharon;Line=providence
+TR=825;dir=o;day=m-f;TI=18:15;stn=mansfield;Line=providence
+TR=825;dir=o;day=m-f;TI=18:23;stn=attleboro;Line=providence
+TR=825;dir=o;day=m-f;TI=18:33;stn=south attleboro;Line=providence
+TR=825;dir=o;day=m-f;TI=18:43;stn=providence;Line=providence
+TR=825;dir=o;day=m-f;TI=18:59;stn=tf green airport;Line=providence
+TR=825;dir=o;day=m-f;TI=19:15;stn=wickford junction;Line=providence
+TR=826;dir=i;day=m-f;TI=16:08;stn=providence;Line=providence
+TR=826;dir=i;day=m-f;TI=16:20;stn=south attleboro;Line=providence
+TR=826;dir=i;day=m-f;TI=16:30;stn=attleboro;Line=providence
+TR=826;dir=i;day=m-f;TI=16:40;stn=mansfield;Line=providence
+TR=826;dir=i;day=m-f;TI=16:49;stn=sharon;Line=providence
+TR=826;dir=i;day=m-f;TI=16:56;stn=canton junction;Line=providence
+TR=826;dir=i;day=m-f;TI=17:01;stn=route 128;Line=providence
+TR=826;dir=i;day=m-f;TI=17:06;stn=hyde park;Line=providence
+TR=826;dir=i;day=m-f;TI=17:15;stn=back bay;Line=providence
+TR=826;dir=i;day=m-f;TI=17:21;stn=south station;Line=providence
+TR=827;dir=o;day=m-f;TI=18:10;stn=south station;Line=providence
+TR=827;dir=o;day=m-f;TI=18:15;stn=back bay;Line=providence
+TR=827;dir=o;day=m-f;TI=18:19;stn=ruggles;Line=providence
+TR=827;dir=o;day=m-f;TI=18:37;stn=sharon;Line=providence
+TR=827;dir=o;day=m-f;TI=18:45;stn=mansfield;Line=providence
+TR=827;dir=o;day=m-f;TI=18:53;stn=attleboro;Line=providence
+TR=827;dir=o;day=m-f;TI=19:03;stn=south attleboro;Line=providence
+TR=827;dir=o;day=m-f;TI=19:13;stn=providence;Line=providence
+TR=828;dir=i;day=m-f;TI=17:20;stn=providence;Line=providence
+TR=828;dir=i;day=m-f;TI=17:29;stn=south attleboro;Line=providence
+TR=828;dir=i;day=m-f;TI=17:39;stn=attleboro;Line=providence
+TR=828;dir=i;day=m-f;TI=17:48;stn=mansfield;Line=providence
+TR=828;dir=i;day=m-f;TI=17:59;stn=route 128;Line=providence
+TR=828;dir=i;day=m-f;TI=18:09;stn=back bay;Line=providence
+TR=828;dir=i;day=m-f;TI=18:14;stn=south station;Line=providence
+TR=829;dir=o;day=m-f;TI=18:50;stn=south station;Line=providence
+TR=829;dir=o;day=m-f;TI=18:55;stn=back bay;Line=providence
+TR=829;dir=o;day=m-f;TI=18:58;stn=ruggles;Line=providence
+TR=829;dir=o;day=m-f;TI=19:08;stn=hyde park;Line=providence
+TR=829;dir=o;day=m-f;TI=19:13;stn=route 128;Line=providence
+TR=829;dir=o;day=m-f;TI=19:19;stn=canton junction;Line=providence
+TR=829;dir=o;day=m-f;TI=19:25;stn=sharon;Line=providence
+TR=829;dir=o;day=m-f;TI=19:33;stn=mansfield;Line=providence
+TR=829;dir=o;day=m-f;TI=19:41;stn=attleboro;Line=providence
+TR=829;dir=o;day=m-f;TI=19:51;stn=south attleboro;Line=providence
+TR=829;dir=o;day=m-f;TI=20:01;stn=providence;Line=providence
+TR=829;dir=o;day=m-f;TI=20:17;stn=tf green airport;Line=providence
+TR=829;dir=o;day=m-f;TI=20:33;stn=wickford junction;Line=providence
+TR=830;dir=i;day=m-f;TI=17:30;stn=wickford junction;Line=providence
+TR=830;dir=i;day=m-f;TI=17:44;stn=tf green airport;Line=providence
+TR=830;dir=i;day=m-f;TI=18:00;stn=providence;Line=providence
+TR=830;dir=i;day=m-f;TI=18:09;stn=south attleboro;Line=providence
+TR=830;dir=i;day=m-f;TI=18:19;stn=attleboro;Line=providence
+TR=830;dir=i;day=m-f;TI=18:28;stn=mansfield;Line=providence
+TR=830;dir=i;day=m-f;TI=18:37;stn=sharon;Line=providence
+TR=830;dir=i;day=m-f;TI=18:45;stn=route 128;Line=providence
+TR=830;dir=i;day=m-f;TI=18:55;stn=back bay;Line=providence
+TR=830;dir=i;day=m-f;TI=19:00;stn=south station;Line=providence
+TR=831;dir=o;day=m-f;TI=19:30;stn=south station;Line=providence
+TR=831;dir=o;day=m-f;TI=19:35;stn=back bay;Line=providence
+TR=831;dir=o;day=m-f;TI=19:38;stn=ruggles;Line=providence
+TR=831;dir=o;day=m-f;TI=19:52;stn=route 128;Line=providence
+TR=831;dir=o;day=m-f;TI=19:58;stn=canton junction;Line=providence
+TR=831;dir=o;day=m-f;TI=20:04;stn=sharon;Line=providence
+TR=831;dir=o;day=m-f;TI=20:12;stn=mansfield;Line=providence
+TR=831;dir=o;day=m-f;TI=20:20;stn=attleboro;Line=providence
+TR=831;dir=o;day=m-f;TI=20:30;stn=south attleboro;Line=providence
+TR=831;dir=o;day=m-f;TI=20:40;stn=providence;Line=providence
+TR=832;dir=i;day=m-f;TI=18:55;stn=wickford junction;Line=providence
+TR=832;dir=i;day=m-f;TI=19:09;stn=tf green airport;Line=providence
+TR=832;dir=i;day=m-f;TI=19:25;stn=providence;Line=providence
+TR=832;dir=i;day=m-f;TI=19:34;stn=south attleboro;Line=providence
+TR=832;dir=i;day=m-f;TI=19:44;stn=attleboro;Line=providence
+TR=832;dir=i;day=m-f;TI=19:54;stn=mansfield;Line=providence
+TR=832;dir=i;day=m-f;TI=20:03;stn=sharon;Line=providence
+TR=832;dir=i;day=m-f;TI=20:10;stn=canton junction;Line=providence
+TR=832;dir=i;day=m-f;TI=20:15;stn=route 128;Line=providence
+TR=832;dir=i;day=m-f;TI=20:20;stn=hyde park;Line=providence
+TR=832;dir=i;day=m-f;TI=20:29;stn=back bay;Line=providence
+TR=832;dir=i;day=m-f;TI=20:34;stn=south station;Line=providence
+TR=833;dir=o;day=m-f;TI=20:30;stn=south station;Line=providence
+TR=833;dir=o;day=m-f;TI=20:35;stn=back bay;Line=providence
+TR=833;dir=o;day=m-f;TI=20:38;stn=ruggles;Line=providence
+TR=833;dir=o;day=m-f;TI=20:46;stn=hyde park;Line=providence
+TR=833;dir=o;day=m-f;TI=20:51;stn=route 128;Line=providence
+TR=833;dir=o;day=m-f;TI=20:57;stn=canton junction;Line=providence
+TR=833;dir=o;day=m-f;TI=21:03;stn=sharon;Line=providence
+TR=833;dir=o;day=m-f;TI=21:11;stn=mansfield;Line=providence
+TR=833;dir=o;day=m-f;TI=21:19;stn=attleboro;Line=providence
+TR=833;dir=o;day=m-f;TI=21:29;stn=south attleboro;Line=providence
+TR=833;dir=o;day=m-f;TI=21:39;stn=providence;Line=providence
+TR=834;dir=i;day=m-f;TI=19:45;stn=wickford junction;Line=providence
+TR=834;dir=i;day=m-f;TI=19:59;stn=tf green airport;Line=providence
+TR=834;dir=i;day=m-f;TI=20:15;stn=providence;Line=providence
+TR=834;dir=i;day=m-f;TI=20:24;stn=south attleboro;Line=providence
+TR=834;dir=i;day=m-f;TI=20:34;stn=attleboro;Line=providence
+TR=834;dir=i;day=m-f;TI=20:44;stn=mansfield;Line=providence
+TR=834;dir=i;day=m-f;TI=20:53;stn=sharon;Line=providence
+TR=834;dir=i;day=m-f;TI=21:00;stn=canton junction;Line=providence
+TR=834;dir=i;day=m-f;TI=21:05;stn=route 128;Line=providence
+TR=834;dir=i;day=m-f;TI=21:10;stn=hyde park;Line=providence
+TR=834;dir=i;day=m-f;TI=21:19;stn=back bay;Line=providence
+TR=834;dir=i;day=m-f;TI=21:24;stn=south station;Line=providence
+TR=835;dir=o;day=m-f;TI=22:00;stn=south station;Line=providence
+TR=835;dir=o;day=m-f;TI=22:05;stn=back bay;Line=providence
+TR=835;dir=o;day=m-f;TI=22:08;stn=ruggles;Line=providence
+TR=835;dir=o;day=m-f;TI=22:18;stn=hyde park;Line=providence
+TR=835;dir=o;day=m-f;TI=22:23;stn=route 128;Line=providence
+TR=835;dir=o;day=m-f;TI=22:29;stn=canton junction;Line=providence
+TR=835;dir=o;day=m-f;TI=22:35;stn=sharon;Line=providence
+TR=835;dir=o;day=m-f;TI=22:43;stn=mansfield;Line=providence
+TR=835;dir=o;day=m-f;TI=22:51;stn=attleboro;Line=providence
+TR=835;dir=o;day=m-f;TI=23:01;stn=south attleboro;Line=providence
+TR=835;dir=o;day=m-f;TI=23:11;stn=providence;Line=providence
+TR=835;dir=o;day=m-f;TI=23:27;stn=tf green airport;Line=providence
+TR=835;dir=o;day=m-f;TI=23:43;stn=wickford junction;Line=providence
+TR=836;dir=i;day=m-f;TI=20:53;stn=wickford junction;Line=providence
+TR=836;dir=i;day=m-f;TI=21:07;stn=tf green airport;Line=providence
+TR=836;dir=i;day=m-f;TI=21:23;stn=providence;Line=providence
+TR=836;dir=i;day=m-f;TI=21:34;stn=south attleboro;Line=providence
+TR=836;dir=i;day=m-f;TI=21:44;stn=attleboro;Line=providence
+TR=836;dir=i;day=m-f;TI=21:54;stn=mansfield;Line=providence
+TR=836;dir=i;day=m-f;TI=22:03;stn=sharon;Line=providence
+TR=836;dir=i;day=m-f;TI=22:10;stn=canton junction;Line=providence
+TR=836;dir=i;day=m-f;TI=22:15;stn=route 128;Line=providence
+TR=836;dir=i;day=m-f;TI=22:20;stn=hyde park;Line=providence
+TR=836;dir=i;day=m-f;TI=22:29;stn=back bay;Line=providence
+TR=836;dir=i;day=m-f;TI=22:34;stn=south station;Line=providence
+TR=837;dir=o;day=m-f;TI=23:00;stn=south station;Line=providence
+TR=837;dir=o;day=m-f;TI=23:05;stn=back bay;Line=providence
+TR=837;dir=o;day=m-f;TI=23:08;stn=ruggles;Line=providence
+TR=837;dir=o;day=m-f;TI=23:18;stn=hyde park;Line=providence
+TR=837;dir=o;day=m-f;TI=23:23;stn=route 128;Line=providence
+TR=837;dir=o;day=m-f;TI=23:29;stn=canton junction;Line=providence
+TR=837;dir=o;day=m-f;TI=23:35;stn=sharon;Line=providence
+TR=837;dir=o;day=m-f;TI=23:43;stn=mansfield;Line=providence
+TR=837;dir=o;day=m-f;TI=23:51;stn=attleboro;Line=providence
+TR=837;dir=o;day=m-f;TI=24:01;stn=south attleboro;Line=providence
+TR=837;dir=o;day=m-f;TI=24:11;stn=providence;Line=providence
+TR=838;dir=i;day=m-f;TI=22:30;stn=providence;Line=providence
+TR=838;dir=i;day=m-f;TI=22:39;stn=south attleboro;Line=providence
+TR=838;dir=i;day=m-f;TI=22:49;stn=attleboro;Line=providence
+TR=838;dir=i;day=m-f;TI=22:59;stn=mansfield;Line=providence
+TR=838;dir=i;day=m-f;TI=23:08;stn=sharon;Line=providence
+TR=838;dir=i;day=m-f;TI=23:15;stn=canton junction;Line=providence
+TR=838;dir=i;day=m-f;TI=23:20;stn=route 128;Line=providence
+TR=838;dir=i;day=m-f;TI=23:25;stn=hyde park;Line=providence
+TR=838;dir=i;day=m-f;TI=23:34;stn=back bay;Line=providence
+TR=838;dir=i;day=m-f;TI=23:39;stn=south station;Line=providence
+TR=839;dir=o;day=m-f;TI=23:59;stn=south station;Line=providence
+TR=839;dir=o;day=m-f;TI=24:04;stn=back bay;Line=providence
+TR=839;dir=o;day=m-f;TI=24:07;stn=ruggles;Line=providence
+TR=839;dir=o;day=m-f;TI=24:17;stn=hyde park;Line=providence
+TR=839;dir=o;day=m-f;TI=24:22;stn=route 128;Line=providence
+TR=839;dir=o;day=m-f;TI=24:28;stn=canton junction;Line=providence
+TR=839;dir=o;day=m-f;TI=24:34;stn=sharon;Line=providence
+TR=839;dir=o;day=m-f;TI=24:42;stn=mansfield;Line=providence
+TR=839;dir=o;day=m-f;TI=24:50;stn=attleboro;Line=providence
+TR=839;dir=o;day=m-f;TI=25:00;stn=south attleboro;Line=providence
+TR=839;dir=o;day=m-f;TI=25:10;stn=providence;Line=providence
+TR=842;dir=i;day=m-f;TI=07:14;stn=attleboro;Line=providence
+TR=842;dir=i;day=m-f;TI=07:24;stn=mansfield;Line=providence
+TR=842;dir=i;day=m-f;TI=07:34;stn=sharon;Line=providence
+TR=842;dir=i;day=m-f;TI=07:41;stn=canton junction;Line=providence
+TR=842;dir=i;day=m-f;TI=07:46;stn=route 128;Line=providence
+TR=842;dir=i;day=m-f;TI=07:51;stn=hyde park;Line=providence
+TR=842;dir=i;day=m-f;TI=08:00;stn=back bay;Line=providence
+TR=842;dir=i;day=m-f;TI=08:06;stn=south station;Line=providence
+TR=843;dir=o;day=m-f;TI=06:18;stn=south station;Line=providence
+TR=843;dir=o;day=m-f;TI=06:23;stn=back bay;Line=providence
+TR=843;dir=o;day=m-f;TI=06:37;stn=route 128;Line=providence
+TR=843;dir=o;day=m-f;TI=06:55;stn=attleboro;Line=providence
+TR=8801;dir=o;day=m-f;TI=04:58;stn=providence;Line=providence
+TR=8801;dir=o;day=m-f;TI=05:14;stn=tf green airport;Line=providence
+TR=8801;dir=o;day=m-f;TI=05:30;stn=wickford junction;Line=providence
+TR=8803;dir=o;day=m-f;TI=05:49;stn=providence;Line=providence
+TR=8803;dir=o;day=m-f;TI=06:07;stn=tf green airport;Line=providence
+TR=8803;dir=o;day=m-f;TI=06:21;stn=wickford junction;Line=providence
+TR=8805;dir=o;day=m-f;TI=06:55;stn=providence;Line=providence
+TR=8805;dir=o;day=m-f;TI=07:11;stn=tf green airport;Line=providence
+TR=8805;dir=o;day=m-f;TI=07:27;stn=wickford junction;Line=providence
+TR=900;dir=i;day=m-f;TI=06:20;stn=stoughton;Line=providence
+TR=900;dir=i;day=m-f;TI=06:28;stn=canton center;Line=providence
+TR=900;dir=i;day=m-f;TI=06:31;stn=canton junction;Line=providence
+TR=900;dir=i;day=m-f;TI=06:36;stn=route 128;Line=providence
+TR=900;dir=i;day=m-f;TI=06:41;stn=hyde park;Line=providence
+TR=900;dir=i;day=m-f;TI=06:50;stn=back bay;Line=providence
+TR=900;dir=i;day=m-f;TI=06:56;stn=south station;Line=providence
+TR=901;dir=o;day=m-f;TI=05:20;stn=south station;Line=providence
+TR=901;dir=o;day=m-f;TI=05:25;stn=back bay;Line=providence
+TR=901;dir=o;day=m-f;TI=05:37;stn=route 128;Line=providence
+TR=901;dir=o;day=m-f;TI=05:45;stn=canton center;Line=providence
+TR=901;dir=o;day=m-f;TI=05:53;stn=stoughton;Line=providence
+TR=902;dir=i;day=m-f;TI=06:45;stn=stoughton;Line=providence
+TR=902;dir=i;day=m-f;TI=06:53;stn=canton center;Line=providence
+TR=902;dir=i;day=m-f;TI=06:56;stn=canton junction;Line=providence
+TR=902;dir=i;day=m-f;TI=07:01;stn=route 128;Line=providence
+TR=902;dir=i;day=m-f;TI=07:06;stn=hyde park;Line=providence
+TR=902;dir=i;day=m-f;TI=07:15;stn=back bay;Line=providence
+TR=902;dir=i;day=m-f;TI=07:21;stn=south station;Line=providence
+TR=903;dir=o;day=m-f;TI=06:59;stn=south station;Line=providence
+TR=903;dir=o;day=m-f;TI=07:04;stn=back bay;Line=providence
+TR=903;dir=o;day=m-f;TI=07:19;stn=route 128;Line=providence
+TR=903;dir=o;day=m-f;TI=07:25;stn=canton junction;Line=providence
+TR=903;dir=o;day=m-f;TI=07:28;stn=canton center;Line=providence
+TR=903;dir=o;day=m-f;TI=07:36;stn=stoughton;Line=providence
+TR=904;dir=i;day=m-f;TI=07:50;stn=stoughton;Line=providence
+TR=904;dir=i;day=m-f;TI=07:58;stn=canton center;Line=providence
+TR=904;dir=i;day=m-f;TI=08:01;stn=canton junction;Line=providence
+TR=904;dir=i;day=m-f;TI=08:06;stn=route 128;Line=providence
+TR=904;dir=i;day=m-f;TI=08:19;stn=ruggles;Line=providence
+TR=904;dir=i;day=m-f;TI=08:23;stn=back bay;Line=providence
+TR=904;dir=i;day=m-f;TI=08:29;stn=south station;Line=providence
+TR=905;dir=o;day=m-f;TI=07:35;stn=south station;Line=providence
+TR=905;dir=o;day=m-f;TI=07:40;stn=back bay;Line=providence
+TR=905;dir=o;day=m-f;TI=07:55;stn=route 128;Line=providence
+TR=905;dir=o;day=m-f;TI=08:01;stn=canton junction;Line=providence
+TR=905;dir=o;day=m-f;TI=08:04;stn=canton center;Line=providence
+TR=905;dir=o;day=m-f;TI=08:12;stn=stoughton;Line=providence
+TR=906;dir=i;day=m-f;TI=08:30;stn=stoughton;Line=providence
+TR=906;dir=i;day=m-f;TI=08:38;stn=canton center;Line=providence
+TR=906;dir=i;day=m-f;TI=08:41;stn=canton junction;Line=providence
+TR=906;dir=i;day=m-f;TI=08:46;stn=route 128;Line=providence
+TR=906;dir=i;day=m-f;TI=08:51;stn=hyde park;Line=providence
+TR=906;dir=i;day=m-f;TI=09:00;stn=back bay;Line=providence
+TR=906;dir=i;day=m-f;TI=09:06;stn=south station;Line=providence
+TR=907;dir=o;day=m-f;TI=08:23;stn=south station;Line=providence
+TR=907;dir=o;day=m-f;TI=08:28;stn=back bay;Line=providence
+TR=907;dir=o;day=m-f;TI=08:43;stn=route 128;Line=providence
+TR=907;dir=o;day=m-f;TI=08:49;stn=canton junction;Line=providence
+TR=907;dir=o;day=m-f;TI=08:52;stn=canton center;Line=providence
+TR=907;dir=o;day=m-f;TI=09:00;stn=stoughton;Line=providence
+TR=908;dir=i;day=m-f;TI=09:15;stn=stoughton;Line=providence
+TR=908;dir=i;day=m-f;TI=09:23;stn=canton center;Line=providence
+TR=908;dir=i;day=m-f;TI=09:26;stn=canton junction;Line=providence
+TR=908;dir=i;day=m-f;TI=09:31;stn=route 128;Line=providence
+TR=908;dir=i;day=m-f;TI=09:36;stn=hyde park;Line=providence
+TR=908;dir=i;day=m-f;TI=09:45;stn=back bay;Line=providence
+TR=908;dir=i;day=m-f;TI=09:51;stn=south station;Line=providence
+TR=909;dir=o;day=m-f;TI=09:45;stn=south station;Line=providence
+TR=909;dir=o;day=m-f;TI=09:50;stn=back bay;Line=providence
+TR=909;dir=o;day=m-f;TI=09:53;stn=ruggles;Line=providence
+TR=909;dir=o;day=m-f;TI=10:01;stn=hyde park;Line=providence
+TR=909;dir=o;day=m-f;TI=10:08;stn=route 128;Line=providence
+TR=909;dir=o;day=m-f;TI=10:14;stn=canton junction;Line=providence
+TR=909;dir=o;day=m-f;TI=10:17;stn=canton center;Line=providence
+TR=909;dir=o;day=m-f;TI=10:25;stn=stoughton;Line=providence
+TR=910;dir=i;day=m-f;TI=10:40;stn=stoughton;Line=providence
+TR=910;dir=i;day=m-f;TI=10:48;stn=canton center;Line=providence
+TR=910;dir=i;day=m-f;TI=10:51;stn=canton junction;Line=providence
+TR=910;dir=i;day=m-f;TI=10:56;stn=route 128;Line=providence
+TR=910;dir=i;day=m-f;TI=11:01;stn=hyde park;Line=providence
+TR=910;dir=i;day=m-f;TI=11:12;stn=back bay;Line=providence
+TR=910;dir=i;day=m-f;TI=11:17;stn=south station;Line=providence
+TR=911;dir=o;day=m-f;TI=13:20;stn=south station;Line=providence
+TR=911;dir=o;day=m-f;TI=13:25;stn=back bay;Line=providence
+TR=911;dir=o;day=m-f;TI=13:28;stn=ruggles;Line=providence
+TR=911;dir=o;day=m-f;TI=13:38;stn=hyde park;Line=providence
+TR=911;dir=o;day=m-f;TI=13:43;stn=route 128;Line=providence
+TR=911;dir=o;day=m-f;TI=13:49;stn=canton junction;Line=providence
+TR=911;dir=o;day=m-f;TI=13:52;stn=canton center;Line=providence
+TR=911;dir=o;day=m-f;TI=14:00;stn=stoughton;Line=providence
+TR=912;dir=i;day=m-f;TI=14:15;stn=stoughton;Line=providence
+TR=912;dir=i;day=m-f;TI=14:23;stn=canton center;Line=providence
+TR=912;dir=i;day=m-f;TI=14:26;stn=canton junction;Line=providence
+TR=912;dir=i;day=m-f;TI=14:31;stn=route 128;Line=providence
+TR=912;dir=i;day=m-f;TI=14:44;stn=back bay;Line=providence
+TR=912;dir=i;day=m-f;TI=14:49;stn=south station;Line=providence
+TR=913;dir=o;day=m-f;TI=15:35;stn=south station;Line=providence
+TR=913;dir=o;day=m-f;TI=15:40;stn=back bay;Line=providence
+TR=913;dir=o;day=m-f;TI=15:43;stn=ruggles;Line=providence
+TR=913;dir=o;day=m-f;TI=15:53;stn=hyde park;Line=providence
+TR=913;dir=o;day=m-f;TI=15:58;stn=route 128;Line=providence
+TR=913;dir=o;day=m-f;TI=16:04;stn=canton junction;Line=providence
+TR=913;dir=o;day=m-f;TI=16:07;stn=canton center;Line=providence
+TR=913;dir=o;day=m-f;TI=16:15;stn=stoughton;Line=providence
+TR=914;dir=i;day=m-f;TI=16:33;stn=stoughton;Line=providence
+TR=914;dir=i;day=m-f;TI=16:41;stn=canton center;Line=providence
+TR=914;dir=i;day=m-f;TI=16:50;stn=route 128;Line=providence
+TR=914;dir=i;day=m-f;TI=17:06;stn=back bay;Line=providence
+TR=914;dir=i;day=m-f;TI=17:12;stn=south station;Line=providence
+TR=915;dir=o;day=m-f;TI=16:20;stn=south station;Line=providence
+TR=915;dir=o;day=m-f;TI=16:25;stn=back bay;Line=providence
+TR=915;dir=o;day=m-f;TI=16:29;stn=ruggles;Line=providence
+TR=915;dir=o;day=m-f;TI=16:42;stn=route 128;Line=providence
+TR=915;dir=o;day=m-f;TI=16:48;stn=canton junction;Line=providence
+TR=915;dir=o;day=m-f;TI=16:51;stn=canton center;Line=providence
+TR=915;dir=o;day=m-f;TI=16:59;stn=stoughton;Line=providence
+TR=916;dir=i;day=m-f;TI=17:15;stn=stoughton;Line=providence
+TR=916;dir=i;day=m-f;TI=17:23;stn=canton center;Line=providence
+TR=916;dir=i;day=m-f;TI=17:26;stn=canton junction;Line=providence
+TR=916;dir=i;day=m-f;TI=17:31;stn=route 128;Line=providence
+TR=916;dir=i;day=m-f;TI=17:36;stn=hyde park;Line=providence
+TR=916;dir=i;day=m-f;TI=17:45;stn=back bay;Line=providence
+TR=916;dir=i;day=m-f;TI=17:50;stn=south station;Line=providence
+TR=917;dir=o;day=m-f;TI=17:13;stn=south station;Line=providence
+TR=917;dir=o;day=m-f;TI=17:18;stn=back bay;Line=providence
+TR=917;dir=o;day=m-f;TI=17:22;stn=ruggles;Line=providence
+TR=917;dir=o;day=m-f;TI=17:32;stn=hyde park;Line=providence
+TR=917;dir=o;day=m-f;TI=17:42;stn=route 128;Line=providence
+TR=917;dir=o;day=m-f;TI=17:48;stn=canton junction;Line=providence
+TR=917;dir=o;day=m-f;TI=17:51;stn=canton center;Line=providence
+TR=917;dir=o;day=m-f;TI=17:59;stn=stoughton;Line=providence
+TR=918;dir=i;day=m-f;TI=18:14;stn=stoughton;Line=providence
+TR=918;dir=i;day=m-f;TI=18:22;stn=canton center;Line=providence
+TR=918;dir=i;day=m-f;TI=18:24;stn=canton junction;Line=providence
+TR=918;dir=i;day=m-f;TI=18:29;stn=route 128;Line=providence
+TR=918;dir=i;day=m-f;TI=18:34;stn=hyde park;Line=providence
+TR=918;dir=i;day=m-f;TI=18:43;stn=back bay;Line=providence
+TR=918;dir=i;day=m-f;TI=18:48;stn=south station;Line=providence
+TR=919;dir=o;day=m-f;TI=17:50;stn=south station;Line=providence
+TR=919;dir=o;day=m-f;TI=17:55;stn=back bay;Line=providence
+TR=919;dir=o;day=m-f;TI=17:58;stn=ruggles;Line=providence
+TR=919;dir=o;day=m-f;TI=18:12;stn=route 128;Line=providence
+TR=919;dir=o;day=m-f;TI=18:20;stn=canton junction;Line=providence
+TR=919;dir=o;day=m-f;TI=18:24;stn=canton center;Line=providence
+TR=919;dir=o;day=m-f;TI=18:32;stn=stoughton;Line=providence
+TR=920;dir=i;day=m-f;TI=19:15;stn=stoughton;Line=providence
+TR=920;dir=i;day=m-f;TI=19:23;stn=canton center;Line=providence
+TR=920;dir=i;day=m-f;TI=19:26;stn=canton junction;Line=providence
+TR=920;dir=i;day=m-f;TI=19:31;stn=route 128;Line=providence
+TR=920;dir=i;day=m-f;TI=19:36;stn=hyde park;Line=providence
+TR=920;dir=i;day=m-f;TI=19:45;stn=back bay;Line=providence
+TR=920;dir=i;day=m-f;TI=19:50;stn=south station;Line=providence
+TR=921;dir=o;day=m-f;TI=18:15;stn=south station;Line=providence
+TR=921;dir=o;day=m-f;TI=18:20;stn=back bay;Line=providence
+TR=921;dir=o;day=m-f;TI=18:24;stn=ruggles;Line=providence
+TR=921;dir=o;day=m-f;TI=18:34;stn=hyde park;Line=providence
+TR=921;dir=o;day=m-f;TI=18:39;stn=route 128;Line=providence
+TR=921;dir=o;day=m-f;TI=18:45;stn=canton junction;Line=providence
+TR=921;dir=o;day=m-f;TI=18:48;stn=canton center;Line=providence
+TR=921;dir=o;day=m-f;TI=18:56;stn=stoughton;Line=providence
+TR=922;dir=i;day=m-f;TI=20:35;stn=stoughton;Line=providence
+TR=922;dir=i;day=m-f;TI=20:43;stn=canton center;Line=providence
+TR=922;dir=i;day=m-f;TI=20:46;stn=canton junction;Line=providence
+TR=922;dir=i;day=m-f;TI=20:51;stn=route 128;Line=providence
+TR=922;dir=i;day=m-f;TI=21:03;stn=back bay;Line=providence
+TR=922;dir=i;day=m-f;TI=21:08;stn=south station;Line=providence
+TR=923;dir=o;day=m-f;TI=19:20;stn=south station;Line=providence
+TR=923;dir=o;day=m-f;TI=19:25;stn=back bay;Line=providence
+TR=923;dir=o;day=m-f;TI=19:28;stn=ruggles;Line=providence
+TR=923;dir=o;day=m-f;TI=19:38;stn=hyde park;Line=providence
+TR=923;dir=o;day=m-f;TI=19:43;stn=route 128;Line=providence
+TR=923;dir=o;day=m-f;TI=19:49;stn=canton junction;Line=providence
+TR=923;dir=o;day=m-f;TI=19:52;stn=canton center;Line=providence
+TR=923;dir=o;day=m-f;TI=20:00;stn=stoughton;Line=providence
+TR=924;dir=i;day=m-f;TI=22:35;stn=stoughton;Line=providence
+TR=924;dir=i;day=m-f;TI=22:43;stn=canton center;Line=providence
+TR=924;dir=i;day=m-f;TI=22:46;stn=canton junction;Line=providence
+TR=924;dir=i;day=m-f;TI=22:51;stn=route 128;Line=providence
+TR=924;dir=i;day=m-f;TI=22:56;stn=hyde park;Line=providence
+TR=924;dir=i;day=m-f;TI=23:05;stn=back bay;Line=providence
+TR=924;dir=i;day=m-f;TI=23:10;stn=south station;Line=providence
+TR=925;dir=o;day=m-f;TI=21:40;stn=south station;Line=providence
+TR=925;dir=o;day=m-f;TI=26:45;stn=back bay;Line=providence
+TR=925;dir=o;day=m-f;TI=27:48;stn=ruggles;Line=providence
+TR=925;dir=o;day=m-f;TI=28:02;stn=route 128;Line=providence
+TR=925;dir=o;day=m-f;TI=29:08;stn=canton junction;Line=providence
+TR=925;dir=o;day=m-f;TI=32:11;stn=canton center;Line=providence
+TR=925;dir=o;day=m-f;TI=22:19;stn=stoughton;Line=providence
+TR=926;dir=i;day=m-f;TI=23:35;stn=stoughton;Line=providence
+TR=926;dir=i;day=m-f;TI=23:43;stn=canton center;Line=providence
+TR=926;dir=i;day=m-f;TI=23:46;stn=canton junction;Line=providence
+TR=926;dir=i;day=m-f;TI=23:51;stn=route 128;Line=providence
+TR=926;dir=i;day=m-f;TI=23:56;stn=hyde park;Line=providence
+TR=926;dir=i;day=m-f;TI=24:05;stn=back bay;Line=providence
+TR=926;dir=i;day=m-f;TI=24:10;stn=south station;Line=providence
+TR=927;dir=o;day=m-f;TI=22:40;stn=south station;Line=providence
+TR=927;dir=o;day=m-f;TI=22:45;stn=back bay;Line=providence
+TR=927;dir=o;day=m-f;TI=22:48;stn=ruggles;Line=providence
+TR=927;dir=o;day=m-f;TI=22:58;stn=hyde park;Line=providence
+TR=927;dir=o;day=m-f;TI=23:03;stn=route 128;Line=providence
+TR=927;dir=o;day=m-f;TI=23:09;stn=canton junction;Line=providence
+TR=927;dir=o;day=m-f;TI=23:12;stn=canton center;Line=providence
+TR=927;dir=o;day=m-f;TI=23:20;stn=stoughton;Line=providence
