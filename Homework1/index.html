@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    </head>
+    <body style='background-color: blue; color: white' >
+        <div style='text-align: center'>Trains leaving Boston on a certain line and day</div>
+        <hr/>
+        <form action="/leaving_boston.cgi">
+            <h5>Enter a line</h5>
+            <input type="text" name="line"/>
+            <h5>Enter day</h5>
+            <fieldset>
+                <legend>Days:</legend>
+                <label for="mf">Monday - Friday: (m-f)</label>
+                <input type="text" id="mf" name="when" value="m-f"><br><br>
+                <label for="sat">Saturday: (sa)</label>
+                <input type="text" id="sat" name="when" value="sa"><br><br>
+                <label for="sun">Sunday: (su)</label>
+                <input type="text" id="sun" name="when" value="su"><br><br>
+            </fieldset>
+            <input type='submit' value='Get Trains Leaving Boston'/>
+        </form>
+    </body>
+</html>
