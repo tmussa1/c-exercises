@@ -62,6 +62,7 @@ CMAKE_BINARY_DIR = "D:\MS in CS\CSCI E-26\project1\Homework1\cmake-build-debug"
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/badtime.dir/all
 all: CMakeFiles/insert_commas.dir/all
 all: CMakeFiles/rmtags.dir/all
 all: CMakeFiles/hello6.dir/all
@@ -73,11 +74,38 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/badtime.dir/clean
 clean: CMakeFiles/insert_commas.dir/clean
 clean: CMakeFiles/rmtags.dir/clean
 clean: CMakeFiles/hello6.dir/clean
 clean: CMakeFiles/extract_comments.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/badtime.dir
+
+# All Build rule for target.
+CMakeFiles/badtime.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\badtime.dir\build.make CMakeFiles/badtime.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\badtime.dir\build.make CMakeFiles/badtime.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\MS in CS\CSCI E-26\project1\Homework1\cmake-build-debug\CMakeFiles" --progress-num=1,2 "Built target badtime"
+.PHONY : CMakeFiles/badtime.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/badtime.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\MS in CS\CSCI E-26\project1\Homework1\cmake-build-debug\CMakeFiles" 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/badtime.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\MS in CS\CSCI E-26\project1\Homework1\cmake-build-debug\CMakeFiles" 0
+.PHONY : CMakeFiles/badtime.dir/rule
+
+# Convenience name for target.
+badtime: CMakeFiles/badtime.dir/rule
+.PHONY : badtime
+
+# clean rule for target.
+CMakeFiles/badtime.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\badtime.dir\build.make CMakeFiles/badtime.dir/clean
+.PHONY : CMakeFiles/badtime.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/insert_commas.dir
@@ -86,7 +114,7 @@ clean: CMakeFiles/extract_comments.dir/clean
 CMakeFiles/insert_commas.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\insert_commas.dir\build.make CMakeFiles/insert_commas.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\insert_commas.dir\build.make CMakeFiles/insert_commas.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\MS in CS\CSCI E-26\project1\Homework1\cmake-build-debug\CMakeFiles" --progress-num=5,6 "Built target insert_commas"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\MS in CS\CSCI E-26\project1\Homework1\cmake-build-debug\CMakeFiles" --progress-num=7,8 "Built target insert_commas"
 .PHONY : CMakeFiles/insert_commas.dir/all
 
 # Build rule for subdir invocation for target.
@@ -112,7 +140,7 @@ CMakeFiles/insert_commas.dir/clean:
 CMakeFiles/rmtags.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\rmtags.dir\build.make CMakeFiles/rmtags.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\rmtags.dir\build.make CMakeFiles/rmtags.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\MS in CS\CSCI E-26\project1\Homework1\cmake-build-debug\CMakeFiles" --progress-num=7,8 "Built target rmtags"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\MS in CS\CSCI E-26\project1\Homework1\cmake-build-debug\CMakeFiles" --progress-num=9,10 "Built target rmtags"
 .PHONY : CMakeFiles/rmtags.dir/all
 
 # Build rule for subdir invocation for target.
@@ -138,7 +166,7 @@ CMakeFiles/rmtags.dir/clean:
 CMakeFiles/hello6.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hello6.dir\build.make CMakeFiles/hello6.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hello6.dir\build.make CMakeFiles/hello6.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\MS in CS\CSCI E-26\project1\Homework1\cmake-build-debug\CMakeFiles" --progress-num=3,4 "Built target hello6"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\MS in CS\CSCI E-26\project1\Homework1\cmake-build-debug\CMakeFiles" --progress-num=5,6 "Built target hello6"
 .PHONY : CMakeFiles/hello6.dir/all
 
 # Build rule for subdir invocation for target.
@@ -164,7 +192,7 @@ CMakeFiles/hello6.dir/clean:
 CMakeFiles/extract_comments.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\extract_comments.dir\build.make CMakeFiles/extract_comments.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\extract_comments.dir\build.make CMakeFiles/extract_comments.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\MS in CS\CSCI E-26\project1\Homework1\cmake-build-debug\CMakeFiles" --progress-num=1,2 "Built target extract_comments"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\MS in CS\CSCI E-26\project1\Homework1\cmake-build-debug\CMakeFiles" --progress-num=3,4 "Built target extract_comments"
 .PHONY : CMakeFiles/extract_comments.dir/all
 
 # Build rule for subdir invocation for target.

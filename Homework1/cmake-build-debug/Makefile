@@ -116,6 +116,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named badtime
+
+# Build rule for target.
+badtime: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 badtime
+.PHONY : badtime
+
+# fast build rule for target.
+badtime/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\badtime.dir\build.make CMakeFiles/badtime.dir/build
+.PHONY : badtime/fast
+
+#=============================================================================
 # Target rules for targets named insert_commas
 
 # Build rule for target.
@@ -166,6 +179,30 @@ extract_comments: cmake_check_build_system
 extract_comments/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\extract_comments.dir\build.make CMakeFiles/extract_comments.dir/build
 .PHONY : extract_comments/fast
+
+badtime.obj: badtime.c.obj
+.PHONY : badtime.obj
+
+# target to build an object file
+badtime.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\badtime.dir\build.make CMakeFiles/badtime.dir/badtime.c.obj
+.PHONY : badtime.c.obj
+
+badtime.i: badtime.c.i
+.PHONY : badtime.i
+
+# target to preprocess a source file
+badtime.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\badtime.dir\build.make CMakeFiles/badtime.dir/badtime.c.i
+.PHONY : badtime.c.i
+
+badtime.s: badtime.c.s
+.PHONY : badtime.s
+
+# target to generate assembly for a file
+badtime.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\badtime.dir\build.make CMakeFiles/badtime.dir/badtime.c.s
+.PHONY : badtime.c.s
 
 extract_comments.obj: extract_comments.c.obj
 .PHONY : extract_comments.obj
@@ -271,10 +308,14 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... badtime
 	@echo ... extract_comments
 	@echo ... hello6
 	@echo ... insert_commas
 	@echo ... rmtags
+	@echo ... badtime.obj
+	@echo ... badtime.i
+	@echo ... badtime.s
 	@echo ... extract_comments.obj
 	@echo ... extract_comments.i
 	@echo ... extract_comments.s
