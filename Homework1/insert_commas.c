@@ -30,11 +30,11 @@ void insertCommas(){
         while(index <= length){
             if(index != length && index != 0) {
                 if (
-                        (index > modLength
-                         && ((((modLength + index - 2) % 3 == 0) && modLength == 1) // Insert comma if remainder is 1
-                             || ((modLength + index - 1) % 3 == 0) && modLength == 2 // Insert comma if remainder is 2
-                             || (index % 3 == 0 && modLength == 0)) // Insert comma if remainder is 0
-                         || index == modLength)) {
+                        (((index > modLength)
+                         && (((((modLength + index - 2) % 3 == 0) && modLength == 1) // Insert comma if remainder is 1
+                             || (((modLength + index - 1) % 3 == 0) && modLength == 2) // Insert comma if remainder is 2
+                             || (index % 3 == 0 && modLength == 0)))) // Insert comma if remainder is 0
+                         || (index == modLength))) {
                     result[resultIndex++] = ',';
                 }
             }
@@ -42,7 +42,8 @@ void insertCommas(){
         }
     }
 
-    printf(result);
+    printf("%s", result);
+    printf("\n");
 }
 /**
  * Checks if a string contains all digits
