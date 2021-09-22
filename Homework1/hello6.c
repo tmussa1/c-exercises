@@ -6,6 +6,7 @@
  *  hello6.c
  *
  *	purpose: shows how to examine a string char by char
+ *	This code is copied from lectures
  */
 
 #define	STRSIZE		100
@@ -36,7 +37,7 @@ repeat_a_message( char message[STRSIZE], int times )
 {
     int	i = 0;			/* local variable		*/
 
-    while(i < times) {
+    while(i < times) { // Changed to while loop
         printf("%d. %s", i, message);    /* print it	*/
         i++;
     }
@@ -78,6 +79,7 @@ is_all_digits( char str[STRSIZE] )
 {
     int	pos;			/* index into string	*/
 
+    // Changed to for loop
     for(pos = 0; str[pos] != '\n' && str[pos] != '\0'; pos++){	/* until done	*/
         if ( ! isdigit(str[pos]) )	/* if not a dig	*/
             return 0;		/* get out now! */

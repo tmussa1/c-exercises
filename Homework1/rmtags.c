@@ -1,44 +1,41 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 
 #define TAG 0
 #define VALUE 1
 
-int main(int argc,char* argv[]) {
+void removeTags();
 
-    if(argc == 0){
-        printf("Please enter a filename as an argument");
-        exit(1);
-    }
+int main() {
+    removeTags();
+    return 0;
+}
+
+/**
+ * Removes tags and displays values
+ */
+void removeTags(){
 
     int mode = TAG;
-
-    FILE* filePointer;
     int bufferLength = 255;
     char buffer[bufferLength];
 
-    filePointer = fopen("D:\\sample_sched.txt", "r"); // TODO - don't hardcode this
-
-    // TODO - write comments, check how it works in reverse order
-    // TODO - permission denied for dir create and where to create it, how to copy to server
-    while(fgets(buffer, bufferLength, filePointer))
+    // Read line by line
+    while(fgets(buffer, bufferLength, stdin))
     {
-
         mode = TAG;
-
-        for(int i = 0; i < strlen(buffer); i++) {
-
+        for(int i = 0; i < (int) strlen(buffer); i++) {
             char c = buffer[i];
-
             switch (mode) {
                 case TAG:
+                    // Switch to value when encountering an = sign
                     if (c == '=') {
                         mode = VALUE;
                     }
                     break;
+                    // Switch to tag when encountering a ';' or '\t' sign
                 case VALUE:
-                    if (c == ';') {
+                    if (c == ';' || c == '\t') {
                         mode = TAG;
                     }
                     putchar(c);
@@ -46,8 +43,5 @@ int main(int argc,char* argv[]) {
             }
         }
     }
-
-    fclose(filePointer);
-
-    return 0;
 }
+
