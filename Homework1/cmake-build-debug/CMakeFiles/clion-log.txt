@@ -5,5 +5,11 @@ CMake Error at CMakeLists.txt:6 (add_executable):
   behavior.
 
 
+CMake Error at CMakeLists.txt:9 (add_executable):
+  The target name "26-hw1/insert_commas" is reserved or not valid for certain
+  CMake features, such as generator expressions, and may result in undefined
+  behavior.
+
+
 -- Configuring incomplete, errors occurred!
 See also "D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/CMakeFiles/CMakeOutput.log".
