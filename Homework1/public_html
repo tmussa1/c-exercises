@@ -7,7 +7,7 @@
     <body style='background-color: blue; color: white' >
         <div style='text-align: center'>Trains leaving Boston on a certain line and day</div>
         <hr/>
-        <form action="leaving_boston.cgi" method="get">
+        <form action="/leaving_boston.cgi">
             <h5>Enter a line</h5>
             <input type="text" name="line"/>
             <h5>Enter day</h5>

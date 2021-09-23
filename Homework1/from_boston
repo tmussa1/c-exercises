@@ -1,4 +1,4 @@
 #!/bin/sh
-# Earliest train Leaving Boston on specific line and day
+# Earliest train leaving Boston on specific line and day
 
 grep Line="$1" sched | grep day="$2" | grep dir="o" | cut -d";" -f1,4 | ./semi2tab | ./rmtags | sort -k2 | head -n1
