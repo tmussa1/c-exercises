@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 /**
  * This four associated with the outer finite state machine
@@ -19,7 +20,7 @@
 #define ATTRIBUTE_SIZE 40 // Assuming max attribute length is 40
 
 void format_text_table_with_metadata();
-
+int is_blank(char buffer[]);
 void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]);
 
 int main(){
@@ -82,7 +83,7 @@ void format_text_table_with_metadata(){
                 } else if(strstr(buffer, attribute_opening_tag)){
                     mode = ATTRIBUTE;
                 } else {
-                    if(length > 0){
+                    if(length > 0 && !is_blank(buffer)){
                         printf("\t%s\n\t", opening_row_tag);
                         process_table_text(buffer, attributes);
                     }
@@ -112,7 +113,11 @@ void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SI
                     char attribute[ATTRIBUTE_SIZE];
                     strcpy(attribute, attributes[current_attribute_index++]);
                     // TODO - check overflow error
-                    printf("%s %s%s", opening_column_tag, attribute, closing_angle_bracket);
+                    if(is_blank(attribute)){
+                        printf("%s%s", opening_column_tag, closing_angle_bracket);
+                    } else {
+                        printf("%s %s%s", opening_column_tag, attribute, closing_angle_bracket);
+                    }
                     putchar(c);
                 }
             break;
@@ -129,4 +134,17 @@ void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SI
 
     printf("%s", closing_column_tag);
     printf("\n\t%s\n", closing_row_tag);
+}
+
+int is_blank(char buffer[]){
+    size_t length = strlen(buffer);
+    size_t i = 0;
+
+    while(i < length){
+        if(!isspace(buffer[i])){
+            return 0;
+        }
+        i++;
+    }
+    return 1;
 }
