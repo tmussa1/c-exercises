@@ -59,6 +59,7 @@ void format_text_table_with_metadata(){
                         current_attribute_index = 0;
                     } else {
                         if(current_attribute_index < COLUMN_SIZE && length < ATTRIBUTE_SIZE){
+                            buffer[length - 2] = '\0'; // TODO - change to -1
                             strcpy(attributes[current_attribute_index++], buffer);
                         }
                     }
@@ -82,7 +83,7 @@ void format_text_table_with_metadata(){
                     mode = ATTRIBUTE;
                 } else {
                     if(length > 0){
-                        printf("\t %s\n", opening_row_tag);
+                        printf("\t%s\n\t", opening_row_tag);
                         process_table_text(buffer, attributes);
                     }
                 }
@@ -101,30 +102,31 @@ void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SI
     char closing_row_tag[] = "</tr>";
     int current_attribute_index = 0;
 
-    for(int i = 0; i < length; i++){
+    // TODO - should be length - 1
+    for(int i = 0; i < length - 2; i++){
         char c = buffer[i];
         switch(mode){
             case DELIMITER:
-                if(c != ' ' || c != '\t'){
+                if(c != ' ' && c != '\t' && c != '\n'){
                     mode = COLUMN_TEXT;
                     char attribute[ATTRIBUTE_SIZE];
-                    strcpy(attribute, attributes[current_attribute_index]);
-//                    if(current_attribute_index < COLUMN_SIZE){
-//                        attribute[strlen(attribute) - 1] = '\0';
-//                    }
-                    printf("\t%s %s%s", opening_column_tag, attribute, closing_angle_bracket);
+                    strcpy(attribute, attributes[current_attribute_index++]);
+                    // TODO - check overflow error
+                    printf("%s %s%s", opening_column_tag, attribute, closing_angle_bracket);
                     putchar(c);
                 }
             break;
             case COLUMN_TEXT:
                 if(c == ' ' || c == '\t'){
                     mode = DELIMITER;
-                    printf("%s\t", closing_column_tag);
+                    printf("%s", closing_column_tag);
                 } else {
                     putchar(c);
                 }
             break;
         }
     }
-    printf("\t %s \n", closing_row_tag);
+
+    printf("%s", closing_column_tag);
+    printf("\n\t%s\n", closing_row_tag);
 }
