@@ -128,6 +128,19 @@ Version1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Version1.dir\build.make CMakeFiles/Version1.dir/build
 .PHONY : Version1/fast
 
+#=============================================================================
+# Target rules for targets named Version2
+
+# Build rule for target.
+Version2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Version2
+.PHONY : Version2
+
+# fast build rule for target.
+Version2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Version2.dir\build.make CMakeFiles/Version2.dir/build
+.PHONY : Version2/fast
+
 tt2ht1.obj: tt2ht1.c.obj
 .PHONY : tt2ht1.obj
 
@@ -152,6 +165,30 @@ tt2ht1.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Version1.dir\build.make CMakeFiles/Version1.dir/tt2ht1.c.s
 .PHONY : tt2ht1.c.s
 
+tt2ht2.obj: tt2ht2.c.obj
+.PHONY : tt2ht2.obj
+
+# target to build an object file
+tt2ht2.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Version2.dir\build.make CMakeFiles/Version2.dir/tt2ht2.c.obj
+.PHONY : tt2ht2.c.obj
+
+tt2ht2.i: tt2ht2.c.i
+.PHONY : tt2ht2.i
+
+# target to preprocess a source file
+tt2ht2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Version2.dir\build.make CMakeFiles/Version2.dir/tt2ht2.c.i
+.PHONY : tt2ht2.c.i
+
+tt2ht2.s: tt2ht2.c.s
+.PHONY : tt2ht2.s
+
+# target to generate assembly for a file
+tt2ht2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Version2.dir\build.make CMakeFiles/Version2.dir/tt2ht2.c.s
+.PHONY : tt2ht2.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -161,9 +198,13 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Version1
+	@echo ... Version2
 	@echo ... tt2ht1.obj
 	@echo ... tt2ht1.i
 	@echo ... tt2ht1.s
+	@echo ... tt2ht2.obj
+	@echo ... tt2ht2.i
+	@echo ... tt2ht2.s
 .PHONY : help
 
 
