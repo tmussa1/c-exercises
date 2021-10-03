@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "D:/MS in CS/CSCI E-26/project1/Homework1/badtime.c" "D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/CMakeFiles/badtime.dir/badtime.c.obj"
+  "D:/MS in CS/CSCI E-26/projects/Homework1/badtime.c" "D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/CMakeFiles/badtime.dir/badtime.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

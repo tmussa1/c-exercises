@@ -1,15 +1,10 @@
-"C:\Program Files\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" "D:\MS in CS\CSCI E-26\project1\Homework1"
-CMake Error at CMakeLists.txt:6 (add_executable):
-  The target name "26-hw1/rmtags" is reserved or not valid for certain CMake
-  features, such as generator expressions, and may result in undefined
-  behavior.
-
-
-CMake Error at CMakeLists.txt:9 (add_executable):
-  The target name "26-hw1/insert_commas" is reserved or not valid for certain
-  CMake features, such as generator expressions, and may result in undefined
-  behavior.
-
-
--- Configuring incomplete, errors occurred!
-See also "D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+"C:\Program Files\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" "D:\MS in CS\CSCI E-26\projects\Homework1"
+-- The C compiler identification is GNU 10.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/msys64/mingw64/bin/gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug

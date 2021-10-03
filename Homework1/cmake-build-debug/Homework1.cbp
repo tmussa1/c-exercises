@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug"/>
+				<Option working_dir="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="badtime">
-				<Option output="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/badtime.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug"/>
+				<Option output="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/badtime.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -30,15 +30,15 @@
 					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 badtime"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 badtime"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="badtime/fast">
-				<Option output="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/badtime.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug"/>
+				<Option output="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/badtime.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -49,15 +49,15 @@
 					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 badtime/fast"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 badtime/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="insert_commas">
-				<Option output="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/insert_commas.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug"/>
+				<Option output="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/insert_commas.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -68,15 +68,15 @@
 					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 insert_commas"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 insert_commas"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="insert_commas/fast">
-				<Option output="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/insert_commas.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug"/>
+				<Option output="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/insert_commas.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -87,15 +87,15 @@
 					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 insert_commas/fast"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 insert_commas/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rmtags">
-				<Option output="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/rmtags.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug"/>
+				<Option output="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/rmtags.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -106,15 +106,15 @@
 					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rmtags"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rmtags"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rmtags/fast">
-				<Option output="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/rmtags.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug"/>
+				<Option output="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/rmtags.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -125,15 +125,15 @@
 					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rmtags/fast"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rmtags/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="hello6">
-				<Option output="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/hello6.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug"/>
+				<Option output="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/hello6.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -144,15 +144,15 @@
 					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 hello6"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 hello6"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="hello6/fast">
-				<Option output="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/hello6.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug"/>
+				<Option output="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/hello6.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -163,25 +163,25 @@
 					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 hello6/fast"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 hello6/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug"/>
+				<Option working_dir="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="extract_comments">
-				<Option output="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/extract_comments.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug"/>
+				<Option output="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/extract_comments.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -192,15 +192,15 @@
 					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 extract_comments"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 extract_comments"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="extract_comments/fast">
-				<Option output="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/extract_comments.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug"/>
+				<Option output="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/extract_comments.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -211,39 +211,39 @@
 					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 extract_comments/fast"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 extract_comments/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug"/>
+				<Option working_dir="D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/project1/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/MS in CS/CSCI E-26/projects/Homework1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/MS in CS/CSCI E-26/project1/Homework1/badtime.c">
+		<Unit filename="D:/MS in CS/CSCI E-26/projects/Homework1/badtime.c">
 			<Option target="badtime"/>
 		</Unit>
-		<Unit filename="D:/MS in CS/CSCI E-26/project1/Homework1/extract_comments.c">
+		<Unit filename="D:/MS in CS/CSCI E-26/projects/Homework1/extract_comments.c">
 			<Option target="extract_comments"/>
 		</Unit>
-		<Unit filename="D:/MS in CS/CSCI E-26/project1/Homework1/hello6.c">
+		<Unit filename="D:/MS in CS/CSCI E-26/projects/Homework1/hello6.c">
 			<Option target="hello6"/>
 		</Unit>
-		<Unit filename="D:/MS in CS/CSCI E-26/project1/Homework1/insert_commas.c">
+		<Unit filename="D:/MS in CS/CSCI E-26/projects/Homework1/insert_commas.c">
 			<Option target="insert_commas"/>
 		</Unit>
-		<Unit filename="D:/MS in CS/CSCI E-26/project1/Homework1/rmtags.c">
+		<Unit filename="D:/MS in CS/CSCI E-26/projects/Homework1/rmtags.c">
 			<Option target="rmtags"/>
 		</Unit>
-		<Unit filename="D:/MS in CS/CSCI E-26/project1/Homework1/CMakeLists.txt">
+		<Unit filename="D:/MS in CS/CSCI E-26/projects/Homework1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

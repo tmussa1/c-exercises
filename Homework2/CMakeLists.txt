@@ -3,4 +3,4 @@ project(Homework2 C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(Homework2 main.c)
+add_executable(Version1 tt2ht1.c)

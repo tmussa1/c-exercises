@@ -116,41 +116,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Homework2
+# Target rules for targets named Version1
 
 # Build rule for target.
-Homework2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Homework2
-.PHONY : Homework2
+Version1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Version1
+.PHONY : Version1
 
 # fast build rule for target.
-Homework2/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Homework2.dir\build.make CMakeFiles/Homework2.dir/build
-.PHONY : Homework2/fast
+Version1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Version1.dir\build.make CMakeFiles/Version1.dir/build
+.PHONY : Version1/fast
 
-main.obj: main.c.obj
-.PHONY : main.obj
+tt2ht1.obj: tt2ht1.c.obj
+.PHONY : tt2ht1.obj
 
 # target to build an object file
-main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Homework2.dir\build.make CMakeFiles/Homework2.dir/main.c.obj
-.PHONY : main.c.obj
+tt2ht1.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Version1.dir\build.make CMakeFiles/Version1.dir/tt2ht1.c.obj
+.PHONY : tt2ht1.c.obj
 
-main.i: main.c.i
-.PHONY : main.i
+tt2ht1.i: tt2ht1.c.i
+.PHONY : tt2ht1.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Homework2.dir\build.make CMakeFiles/Homework2.dir/main.c.i
-.PHONY : main.c.i
+tt2ht1.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Version1.dir\build.make CMakeFiles/Version1.dir/tt2ht1.c.i
+.PHONY : tt2ht1.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+tt2ht1.s: tt2ht1.c.s
+.PHONY : tt2ht1.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Homework2.dir\build.make CMakeFiles/Homework2.dir/main.c.s
-.PHONY : main.c.s
+tt2ht1.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Version1.dir\build.make CMakeFiles/Version1.dir/tt2ht1.c.s
+.PHONY : tt2ht1.c.s
 
 # Help Target
 help:
@@ -160,10 +160,10 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... Homework2
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... Version1
+	@echo ... tt2ht1.obj
+	@echo ... tt2ht1.i
+	@echo ... tt2ht1.s
 .PHONY : help
 
 
