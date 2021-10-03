@@ -10,4 +10,7 @@
       * How to test it
           * ./tt2ht1 < who.txt
           * ./tt2ht1 < blank.txt
+##### Part 3b - tt2h1 wotking with cgi
+      * https://cscie26.dce.harvard.edu/~tom976/hw2/part3b.cgi
+
            
