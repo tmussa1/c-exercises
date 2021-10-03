@@ -5,7 +5,7 @@
 #define DELIMITER 1
 #define TEXT 2
 
-void formatTextTableOutput(char opening_table_tag[], closing_table_tag[],
+void formatTextTableOutput(char opening_table_tag[], char closing_table_tag[],
                            char opening_row_tag[], char opening_column_tag[],
                            char closing_column_tag[], char closing_row_tag[]);
 int process_text(char c, char closing_column_tag[6], char closing_row_tag[6], int mode);
@@ -27,7 +27,7 @@ int main(){
     return 0;
 }
 
-void formatTextTableOutput(char opening_table_tag[], closing_table_tag[],
+void formatTextTableOutput(char opening_table_tag[], char closing_table_tag[],
                            char opening_row_tag[], char opening_column_tag[],
                            char closing_column_tag[], char closing_row_tag[]) {
 
