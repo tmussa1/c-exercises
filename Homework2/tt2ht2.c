@@ -59,7 +59,7 @@ void format_text_table_with_metadata(){
                         current_attribute_index = 0;
                     } else {
                         if(current_attribute_index < COLUMN_SIZE && length < ATTRIBUTE_SIZE){
-                            buffer[length - 2] = '\0'; // TODO - change to -1
+                            buffer[length - 1] = '\0'; // Skip the last new line character
                             strcpy(attributes[current_attribute_index++], buffer);
                         }
                     }
@@ -102,8 +102,8 @@ void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SI
     char closing_row_tag[] = "</tr>";
     int current_attribute_index = 0;
 
-    // TODO - should be length - 1
-    for(int i = 0; i < length - 2; i++){
+    // Skip the last new line character
+    for(int i = 0; i < length - 1; i++){
         char c = buffer[i];
         switch(mode){
             case DELIMITER:
