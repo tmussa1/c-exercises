@@ -8,7 +8,7 @@ class=’tty’
 
 class=’number’
 
-style=’text-align: right;’
+style=’text-align: right;'
 </attributes>
 rserved pts/0 Sep 19 20:18 (10.1.7.1)
 hsieh pts/1 Sep 19 01:15 (10.1.6.234)
