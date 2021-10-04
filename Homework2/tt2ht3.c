@@ -17,12 +17,13 @@
 #define DELIMITER 4
 #define COLUMN_TEXT 5
 
+#define DELIMITER_SIZE 2
 #define COLUMN_SIZE 20 // Assuming there will be a max of 20 table columns
 #define ATTRIBUTE_SIZE 40 // Assuming max attribute length is 40
 
 void format_text_table_with_metadata();
 int is_blank(char buffer[]);
-void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE], char delimiter);
+void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE], char * delimiter);
 char * strsep (char **stringp, const char *delim);
 
 int main(){
@@ -35,9 +36,9 @@ void format_text_table_with_metadata(){
     int bufferLength = 255;
     char buffer[bufferLength];
     int mode = BLANK_SPACE;
-    char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE];
+    char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE] = {{0}};
     int current_attribute_index = 0;
-    char delimiter;
+    char delimiter[DELIMITER_SIZE];
 
     char delimiter_tag[]= "<delim";
     char attribute_opening_tag[] = "<attributes>";
@@ -78,7 +79,8 @@ void format_text_table_with_metadata(){
                 } else if(strstr(buffer, delimiter_tag)) {
                     char * token = strtok(buffer, "=");
                     token = strtok(NULL, "=");
-                    delimiter = token[0];
+                    delimiter[0] = token[0];
+                    delimiter[1] = '\0';
                 } else if(length > 0 && !is_blank(buffer)){
                     mode = TEXT;
                     printf("\t%s\n\t", opening_row_tag);
@@ -93,7 +95,8 @@ void format_text_table_with_metadata(){
                 } else if(strstr(buffer, delimiter_tag)) {
                     char * token = strtok(buffer, "=");
                     token = strtok(NULL, "=");
-                    delimiter = token[0];
+                    delimiter[0] = token[0];
+                    delimiter[1] = '\0';
                 } else {
                     if (length > 0 && !is_blank(buffer)) {
                         printf("\t%s\n\t", opening_row_tag);
@@ -105,7 +108,7 @@ void format_text_table_with_metadata(){
     }
 }
 
-void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE], char delimiter) {
+void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE], char * delimiter) {
 
     char opening_column_tag[] = "<td";
     char closing_angle_bracket[] = ">";
@@ -115,13 +118,16 @@ void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SI
     char * word;
 
     while((word = strsep(&buffer, delimiter)) != NULL){
-        char attribute[ATTRIBUTE_SIZE];
-        strcpy(attribute, attributes[current_attribute_index++]);
         printf("%s", opening_column_tag);
-        if(!is_blank(attribute)){
-            printf("%s", attribute);
+        char attribute[ATTRIBUTE_SIZE];
+        if(attributes != NULL && attributes[current_attribute_index] != 0){
+            strcpy(attribute, attributes[current_attribute_index++]);
+            if(!is_blank(attribute)){
+                printf("%s", attribute);
+            }
         }
         printf("%s",closing_angle_bracket);
+        word[strlen(word) - 1] = '\0';
         printf("%s", word);
         printf("%s", closing_column_tag);
     }
