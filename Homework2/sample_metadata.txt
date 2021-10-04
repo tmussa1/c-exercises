@@ -1,0 +1,20 @@
+<noprocess>
+<h4>Current Users</h4>
+<table border=1 cellpadding=2 width='80%'>
+</noprocess>
+<attributes>
+class='name'
+class='tty'
+
+class='number'
+
+style='text-align: right;'
+</attributes>
+rserved pts/0 Sep 19 20:18 (10.1.7.1)
+hsieh pts/1 Sep 19 01:15 (10.1.6.234)
+msimonet pts/2 Sep 19 02:35 (10.1.6.234)
+barrer pts/3 Sep 19 20:39 (10.1.4.211)
+
+<noprocess>
+</table>
+</noprocess>
