@@ -1,0 +1,15 @@
+<delim value=;/>
+TR=1205;dir=o;day=sa;TI=14:45;stn=north station;Line=haverhill
+TR=1205;dir=o;day=sa;TI=14:55;stn=malden center;Line=haverhill
+TR=1205;dir=o;day=sa;TI=14:59;stn=wyoming hill;Line=haverhill
+TR=1205;dir=o;day=sa;TI=15:01;stn=melrose cedar park;Line=haverhill
+TR=1205;dir=o;day=sa;TI=15:04;stn=melrose highlands;Line=haverhill
+TR=1205;dir=o;day=sa;TI=15:07;stn=greenwood;Line=haverhill
+TR=1205;dir=o;day=sa;TI=15:10;stn=wakefield;Line=haverhill
+TR=1205;dir=o;day=sa;TI=15:16;stn=reading;Line=haverhill
+TR=1205;dir=o;day=sa;TI=15:22;stn=north wilmington;Line=haverhill
+TR=1205;dir=o;day=sa;TI=15:28;stn=ballardvale;Line=haverhill
+TR=1205;dir=o;day=sa;TI=15:33;stn=andover;Line=haverhill
+TR=1205;dir=o;day=sa;TI=15:40;stn=lawrence;Line=haverhill
+TR=1205;dir=o;day=sa;TI=15:49;stn=bradford;Line=haverhill
+TR=1205;dir=o;day=sa;TI=15:52;stn=haverhill;Line=haverhill

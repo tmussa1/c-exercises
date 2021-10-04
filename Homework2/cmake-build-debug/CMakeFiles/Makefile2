@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = "D:\MS in CS\CSCI E-26\projects\Homework2\cmake-build-debug"
 # The main recursive "all" target.
 all: CMakeFiles/Version1.dir/all
 all: CMakeFiles/Version2.dir/all
+all: CMakeFiles/Version3.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -73,6 +74,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/Version1.dir/clean
 clean: CMakeFiles/Version2.dir/clean
+clean: CMakeFiles/Version3.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -126,6 +128,32 @@ Version2: CMakeFiles/Version2.dir/rule
 CMakeFiles/Version2.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Version2.dir\build.make CMakeFiles/Version2.dir/clean
 .PHONY : CMakeFiles/Version2.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Version3.dir
+
+# All Build rule for target.
+CMakeFiles/Version3.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Version3.dir\build.make CMakeFiles/Version3.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Version3.dir\build.make CMakeFiles/Version3.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\MS in CS\CSCI E-26\projects\Homework2\cmake-build-debug\CMakeFiles" --progress-num=5,6 "Built target Version3"
+.PHONY : CMakeFiles/Version3.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Version3.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\MS in CS\CSCI E-26\projects\Homework2\cmake-build-debug\CMakeFiles" 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Version3.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\MS in CS\CSCI E-26\projects\Homework2\cmake-build-debug\CMakeFiles" 0
+.PHONY : CMakeFiles/Version3.dir/rule
+
+# Convenience name for target.
+Version3: CMakeFiles/Version3.dir/rule
+.PHONY : Version3
+
+# clean rule for target.
+CMakeFiles/Version3.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Version3.dir\build.make CMakeFiles/Version3.dir/clean
+.PHONY : CMakeFiles/Version3.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
