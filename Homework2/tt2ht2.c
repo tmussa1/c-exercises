@@ -33,7 +33,10 @@ int process_column_text(int mode, char c, char closing_column_tag[]);
 int process_no_process(int mode, char buffer[], char no_process_closing_tag[]);
 int process_attribute(int mode, char buffer[], char attribute_opening_tag[],
                       char attribute_closing_tag[], int length,
-                      int * current_attribute_index, char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE])
+                      int * current_attribute_index, char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]);
+int process_blank_space(int mode, char buffer[], char no_process_opening_tag[],
+                        char attribute_opening_tag[], int length, char opening_row_tag[],
+                        char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]);
 
 int main(){
     format_text_table_with_metadata();
@@ -66,7 +69,9 @@ void format_text_table_with_metadata(){
                                          &current_attribute_index, attributes);
             break;
             case BLANK_SPACE:
-                mode = process_blank_space();
+                mode = process_blank_space(mode, buffer, no_process_opening_tag,
+                                           attribute_opening_tag, length, opening_row_tag,
+                                           attributes);
             break;
             case TEXT:
                 mode = process_text();
@@ -104,7 +109,9 @@ int process_attribute(int mode, char buffer[], char attribute_opening_tag[],
     return mode;
 }
 
-int process_blank_space(){
+int process_blank_space(int mode, char buffer[], char no_process_opening_tag[],
+                        char attribute_opening_tag[], int length, char opening_row_tag[],
+                        char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]){
     if(strstr(buffer, no_process_opening_tag)){
         mode = NO_PROCESS;
     } else if(strstr(buffer, attribute_opening_tag)){
@@ -114,6 +121,7 @@ int process_blank_space(){
         printf("\t%s\n\t", opening_row_tag);
         process_table_text(buffer, attributes);
     }
+    return mode;
 }
 
 int process_text() {
