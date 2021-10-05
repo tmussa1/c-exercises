@@ -38,8 +38,7 @@ void format_text_table_with_metadata(){
     int mode = BLANK_SPACE;
     char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE] = {{0}};
     int current_attribute_index = 0;
-    char delimiter[DELIMITER_SIZE];
-
+    char delimiter[DELIMITER_SIZE] = " ";
     char delimiter_tag[]= "<delim";
     char attribute_opening_tag[] = "<attributes>";
     char attribute_closing_tag[] = "</attributes>";
@@ -108,6 +107,12 @@ void format_text_table_with_metadata(){
     }
 }
 
+/**
+ *
+ * @param buffer
+ * @param attributes
+ * @param delimiter
+ */
 void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE], char * delimiter) {
 
     char opening_column_tag[] = "<td";
@@ -123,7 +128,7 @@ void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SI
         if(attributes != NULL && attributes[current_attribute_index] != 0){
             strcpy(attribute, attributes[current_attribute_index++]);
             if(!is_blank(attribute)){
-                printf("%s", attribute);
+                printf(" %s", attribute);
             }
         }
         printf("%s",closing_angle_bracket);
