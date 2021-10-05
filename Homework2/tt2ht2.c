@@ -22,6 +22,9 @@
 void format_text_table_with_metadata();
 int is_blank(char buffer[]);
 void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]);
+int process_delimiter(int mode, char c, char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE],
+                      int * current_attribute_index, char opening_column_tag[],
+                      char closing_angle_bracket[]);
 
 int main(){
     format_text_table_with_metadata();
@@ -101,25 +104,15 @@ void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SI
     char closing_angle_bracket[] = ">";
     char closing_column_tag[] = "</td>";
     char closing_row_tag[] = "</tr>";
-    int current_attribute_index = 0;
+    int current_attribute_index;
 
     // Skip the last new line character
     for(int i = 0; i < length - 1; i++){
         char c = buffer[i];
         switch(mode){
             case DELIMITER:
-                if(c != ' ' && c != '\t' && c != '\n'){
-                    mode = COLUMN_TEXT;
-                    char attribute[ATTRIBUTE_SIZE];
-                    strcpy(attribute, attributes[current_attribute_index++]);
-                    // TODO - check overflow error
-                    if(is_blank(attribute)){
-                        printf("%s%s", opening_column_tag, closing_angle_bracket);
-                    } else {
-                        printf("%s %s%s", opening_column_tag, attribute, closing_angle_bracket);
-                    }
-                    putchar(c);
-                }
+                mode = process_delimiter(mode, c, attributes, &current_attribute_index,
+                                         opening_column_tag, closing_angle_bracket);
             break;
             case COLUMN_TEXT:
                 if(c == ' ' || c == '\t'){
@@ -136,6 +129,43 @@ void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SI
     printf("\n\t%s\n", closing_row_tag);
 }
 
+/**
+ * Processes delimiter
+ * Checks for a non-blank character
+ * Prints attributes if exists and puts in td tag, then prints the character
+ * @param mode
+ * @param c
+ * @param attributes
+ * @param current_attribute_index
+ * @param opening_column_tag
+ * @param closing_angle_bracket
+ * @return
+ */
+int process_delimiter(int mode, char c, char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE],
+                      int * current_attribute_index, char opening_column_tag[],
+                      char closing_angle_bracket[]){
+    if(c != ' ' && c != '\t' && c != '\n'){
+        mode = COLUMN_TEXT;
+        char attribute[ATTRIBUTE_SIZE];
+
+        if((*current_attribute_index) < ATTRIBUTE_SIZE){
+            strcpy(attribute, attributes[(*current_attribute_index)++]);
+        }
+        if(is_blank(attribute)){
+            printf("%s%s", opening_column_tag, closing_angle_bracket);
+        } else {
+            printf("%s %s%s", opening_column_tag, attribute, closing_angle_bracket);
+        }
+
+        putchar(c);
+    }
+    return mode;
+}
+/**
+ * Checks if a line contains only blank space
+ * @param buffer
+ * @return
+ */
 int is_blank(char buffer[]){
     size_t length = strlen(buffer);
     size_t i = 0;
