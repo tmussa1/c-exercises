@@ -126,7 +126,7 @@ int process_attribute(int mode, char buffer[], char attribute_opening_tag[],
     } else {
         if(strstr(buffer, attribute_opening_tag)){
             // Reset the attributes array if encountering a nested attribute tag
-            *current_attribute_index = 0;
+            (*current_attribute_index) = 0;
         } else {
             // Check for overflow
             if(*current_attribute_index < COLUMN_SIZE && length < ATTRIBUTE_SIZE){
