@@ -25,6 +25,7 @@ void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SI
 int process_delimiter(int mode, char c, char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE],
                       int * current_attribute_index, char opening_column_tag[],
                       char closing_angle_bracket[]);
+int process_column_text(int mode, char c, char closing_column_tag[]);
 
 int main(){
     format_text_table_with_metadata();
@@ -96,6 +97,12 @@ void format_text_table_with_metadata(){
     }
 }
 
+/**
+ * Processes table text line by line
+ * Uses inner finite state machine to switch between text and delimiter
+ * @param buffer
+ * @param attributes
+ */
 void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]) {
 
     int mode = DELIMITER;
@@ -115,16 +122,10 @@ void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SI
                                          opening_column_tag, closing_angle_bracket);
             break;
             case COLUMN_TEXT:
-                if(c == ' ' || c == '\t'){
-                    mode = DELIMITER;
-                    printf("%s", closing_column_tag);
-                } else {
-                    putchar(c);
-                }
+                mode = process_column_text(mode, c, closing_column_tag);
             break;
         }
     }
-
     printf("%s", closing_column_tag);
     printf("\n\t%s\n", closing_row_tag);
 }
@@ -161,6 +162,27 @@ int process_delimiter(int mode, char c, char attributes[COLUMN_SIZE][ATTRIBUTE_S
     }
     return mode;
 }
+
+/**
+ * Switches mode to delimiter when encountering a blank character and prints closing td tag
+ * Prints charcter otherwise
+ * @param mode
+ * @param c
+ * @param closing_column_tag
+ * @return
+ */
+int process_column_text(int mode, char c, char closing_column_tag[]){
+
+    if(c == ' ' || c == '\t'){
+        mode = DELIMITER;
+        printf("%s", closing_column_tag);
+    } else {
+        putchar(c);
+    }
+
+    return mode;
+}
+
 /**
  * Checks if a line contains only blank space
  * @param buffer
