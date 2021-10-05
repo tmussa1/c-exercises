@@ -138,6 +138,18 @@ int process_attribute(int mode, char buffer[], char attribute_opening_tag[],
     return mode;
 }
 
+/**
+ * Switches to NO_PROCESS or ATTRIBUTE if encountering a closing tag of those
+ * Or processes the row and prints text inside tr and td tags
+ * @param mode
+ * @param buffer
+ * @param no_process_opening_tag
+ * @param attribute_opening_tag
+ * @param length
+ * @param opening_row_tag
+ * @param attributes
+ * @return
+ */
 int process_blank_space(int mode, char buffer[], char no_process_opening_tag[],
                         char attribute_opening_tag[], int length, char opening_row_tag[],
                         char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]){
@@ -153,6 +165,18 @@ int process_blank_space(int mode, char buffer[], char no_process_opening_tag[],
     return mode;
 }
 
+/**
+ * Switches to NO_PROCESS or ATTRIBUTE if encountering an opening tag of those
+ * Or processes the row and prints text inside tr and td tags
+ * @param mode
+ * @param buffer
+ * @param length
+ * @param no_process_opening_tag
+ * @param attribute_opening_tag
+ * @param opening_row_tag
+ * @param attributes
+ * @return
+ */
 int process_text(int mode, char buffer[], int length, char no_process_opening_tag[],
                  char attribute_opening_tag[], char opening_row_tag[], char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]) {
     if(strstr(buffer, no_process_opening_tag)){
