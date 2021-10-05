@@ -28,4 +28,6 @@
          * ./tt2ht3 < sample_metadata2.txt
          * ./tt2ht3 < sample_metadata3.txt
          * ./tt2ht3 < sample_version3.txt
+##### Part 6 - FSM diagram
+      * Please look at diagram.png
            
