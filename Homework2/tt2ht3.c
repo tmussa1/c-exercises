@@ -26,6 +26,16 @@ int is_blank(char buffer[]);
 void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE], char * delimiter);
 char * strsep (char **stringp, const char *delim);
 
+//Outer state machine functions
+int process_no_process(int mode, char buffer[], char no_process_closing_tag[]);
+int process_attribute(int mode, char buffer[], char attribute_opening_tag[],
+                      char attribute_closing_tag[], int length,
+                      int * current_attribute_index,
+                      char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]);
+int process_blank_space(int mode, char buffer[], char no_process_opening_tag[], char attribute_opening_tag[],
+                        char delimiter_tag[], char delimiter[], int length, char opening_row_tag[],
+                        char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]);
+
 int main(){
     format_text_table_with_metadata();
     return 0;
@@ -50,41 +60,17 @@ void format_text_table_with_metadata(){
         size_t length = strlen(buffer);
         switch(mode){
             case NO_PROCESS:
-                if(strstr(buffer, no_process_closing_tag)){
-                    mode = BLANK_SPACE;
-                } else {
-                    printf("%s", buffer);
-                }
+                mode = process_no_process(mode, buffer, no_process_closing_tag);
                 break;
             case ATTRIBUTE:
-                if(strstr(buffer, attribute_closing_tag)){
-                    mode = BLANK_SPACE;
-                } else {
-                    if(strstr(buffer, attribute_opening_tag)){
-                        current_attribute_index = 0;
-                    } else {
-                        if(current_attribute_index < COLUMN_SIZE && length < ATTRIBUTE_SIZE){
-                            buffer[length - 1] = '\0'; // Skip the last new line character
-                            strcpy(attributes[current_attribute_index++], buffer);
-                        }
-                    }
-                }
+                mode = process_attribute(mode, buffer, attribute_opening_tag,
+                                         attribute_closing_tag, length,
+                                         &current_attribute_index, attributes);
                 break;
             case BLANK_SPACE:
-                if(strstr(buffer, no_process_opening_tag)){
-                    mode = NO_PROCESS;
-                } else if(strstr(buffer, attribute_opening_tag)){
-                    mode = ATTRIBUTE;
-                } else if(strstr(buffer, delimiter_tag)) {
-                    char * token = strtok(buffer, "=");
-                    token = strtok(NULL, "=");
-                    delimiter[0] = token[0];
-                    delimiter[1] = '\0';
-                } else if(length > 0 && !is_blank(buffer)){
-                    mode = TEXT;
-                    printf("\t%s\n\t", opening_row_tag);
-                    process_table_text(buffer, attributes, delimiter);
-                }
+                mode = process_blank_space(mode, buffer, no_process_opening_tag, attribute_opening_tag,
+                                           delimiter_tag, delimiter, length, opening_row_tag,
+                                           attributes);
                 break;
             case TEXT:
                 if(strstr(buffer, no_process_opening_tag)){
@@ -108,7 +94,78 @@ void format_text_table_with_metadata(){
 }
 
 /**
- *
+ * Switches back to the neutral blank space state when encountering
+ * a closing no_process tag
+ * Prints to console otherwise
+ * @param mode
+ * @param buffer
+ * @param no_process_closing_tag
+ * @return
+ */
+int process_no_process(int mode, char buffer[], char no_process_closing_tag[]){
+    if(strstr(buffer, no_process_closing_tag)){
+        mode = BLANK_SPACE;
+    } else {
+        printf("%s", buffer);
+    }
+    return mode;
+}
+
+/**
+ * Switches back to neutral state when encountering
+ * closing attribute tag
+ * Stores attribute in a variable otherwise
+ * @param mode
+ * @param buffer
+ * @param attribute_opening_tag
+ * @param attribute_closing_tag
+ * @param length
+ * @param current_attribute_index
+ * @param attributes
+ * @return
+ */
+int process_attribute(int mode, char buffer[], char attribute_opening_tag[],
+                      char attribute_closing_tag[], int length,
+                      int * current_attribute_index, char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]){
+    if(strstr(buffer, attribute_closing_tag)){
+        mode = BLANK_SPACE;
+    } else {
+        if(strstr(buffer, attribute_opening_tag)){
+            // Reset the attributes array if encountering a nested attribute tag
+            (*current_attribute_index) = 0;
+        } else {
+            // Check for overflow
+            if(*current_attribute_index < COLUMN_SIZE && length < ATTRIBUTE_SIZE){
+                buffer[length - 1] = '\0'; // Skip the last new line character
+                strcpy(attributes[(*current_attribute_index)++], buffer);
+            }
+        }
+    }
+    return mode;
+}
+
+int process_blank_space(int mode, char buffer[], char no_process_opening_tag[], char attribute_opening_tag[],
+                        char delimiter_tag[], char delimiter[], int length, char opening_row_tag[],
+                        char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]) {
+    if(strstr(buffer, no_process_opening_tag)){
+        mode = NO_PROCESS;
+    } else if(strstr(buffer, attribute_opening_tag)){
+        mode = ATTRIBUTE;
+    } else if(strstr(buffer, delimiter_tag)) {
+        char * token = strtok(buffer, "=");
+        token = strtok(NULL, "=");
+        delimiter[0] = token[0];
+        delimiter[1] = '\0';
+    } else if(length > 0 && !is_blank(buffer)){
+        mode = TEXT;
+        printf("\t%s\n\t", opening_row_tag);
+        process_table_text(buffer, attributes, delimiter);
+    }
+    return mode;
+}
+/**
+ * Processes each line by enclosing with tr and td tags
+ * Appends attributes if provided
  * @param buffer
  * @param attributes
  * @param delimiter
@@ -132,7 +189,6 @@ void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SI
             }
         }
         printf("%s",closing_angle_bracket);
-        word[strlen(word) - 1] = '\0';
         printf("%s", word);
         printf("%s", closing_column_tag);
     }
@@ -140,6 +196,11 @@ void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SI
     printf("\n\t%s\n", closing_row_tag);
 }
 
+/**
+ * Checks if a line contains only blank space
+ * @param buffer
+ * @return
+ */
 int is_blank(char buffer[]){
     size_t length = strlen(buffer);
     size_t i = 0;

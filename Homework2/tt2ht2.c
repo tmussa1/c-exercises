@@ -29,7 +29,7 @@ int process_delimiter(int mode, char c, char attributes[COLUMN_SIZE][ATTRIBUTE_S
                       char closing_angle_bracket[]);
 int process_column_text(int mode, char c, char closing_column_tag[]);
 
-//Outer state machine functions
+// Outer state machine functions
 int process_no_process(int mode, char buffer[], char no_process_closing_tag[]);
 int process_attribute(int mode, char buffer[], char attribute_opening_tag[],
                       char attribute_closing_tag[], int length,
