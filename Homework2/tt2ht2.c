@@ -3,7 +3,7 @@
 #include <ctype.h>
 
 /**
- * This four associated with the outer finite state machine
+ * These four associated with the outer finite state machine
  */
 #define BLANK_SPACE 0
 #define NO_PROCESS 1
@@ -11,7 +11,7 @@
 #define TEXT 3
 
 /**
- * This two associated with the outer finite state machine
+ * These two associated with the inner finite state machine
  */
 #define DELIMITER 4
 #define COLUMN_TEXT 5
@@ -33,24 +33,30 @@ int process_column_text(int mode, char c, char closing_column_tag[]);
 int process_no_process(int mode, char buffer[], char no_process_closing_tag[]);
 int process_attribute(int mode, char buffer[], char attribute_opening_tag[],
                       char attribute_closing_tag[], int length,
-                      int * current_attribute_index, char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]);
+                      int * current_attribute_index,
+                      char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]);
 int process_blank_space(int mode, char buffer[], char no_process_opening_tag[],
                         char attribute_opening_tag[], int length, char opening_row_tag[],
                         char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]);
+int process_text(int mode, char buffer[], int length, char no_process_opening_tag[],
+                 char attribute_opening_tag[], char opening_row_tag[],
+                 char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]);
 
 int main(){
     format_text_table_with_metadata();
     return 0;
 }
 
+/**
+ * Driver method for the outer finite state machine
+ * It can be in one of these states - NO_PROCESS, ATTRIBUTE, BLANK_SPACE, TEXT
+ */
 void format_text_table_with_metadata(){
-
     int bufferLength = 255;
     char buffer[bufferLength];
     int mode = BLANK_SPACE;
     char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE];
     int current_attribute_index = 0;
-
     char attribute_opening_tag[] = "<attributes>";
     char attribute_closing_tag[] = "</attributes>";
     char no_process_opening_tag[] = "<noprocess>";
@@ -74,12 +80,22 @@ void format_text_table_with_metadata(){
                                            attributes);
             break;
             case TEXT:
-                mode = process_text();
+                mode = process_text(mode, buffer, length, no_process_opening_tag,
+                                    attribute_opening_tag, opening_row_tag, attributes);
             break;
         }
     }
 }
 
+/**
+ * Switches back to the neutral blank space state when encountering
+ * a closing no_process tag
+ * Prints to console otherwise
+ * @param mode
+ * @param buffer
+ * @param no_process_closing_tag
+ * @return
+ */
 int process_no_process(int mode, char buffer[], char no_process_closing_tag[]){
     if(strstr(buffer, no_process_closing_tag)){
         mode = BLANK_SPACE;
@@ -89,6 +105,19 @@ int process_no_process(int mode, char buffer[], char no_process_closing_tag[]){
     return mode;
 }
 
+/**
+ * Switches back to neutral state when encountering
+ * closing attribute tag
+ * Stores attribute in a variable otherwise
+ * @param mode
+ * @param buffer
+ * @param attribute_opening_tag
+ * @param attribute_closing_tag
+ * @param length
+ * @param current_attribute_index
+ * @param attributes
+ * @return
+ */
 int process_attribute(int mode, char buffer[], char attribute_opening_tag[],
                       char attribute_closing_tag[], int length,
                       int * current_attribute_index, char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]){
@@ -124,7 +153,8 @@ int process_blank_space(int mode, char buffer[], char no_process_opening_tag[],
     return mode;
 }
 
-int process_text() {
+int process_text(int mode, char buffer[], int length, char no_process_opening_tag[],
+                 char attribute_opening_tag[], char opening_row_tag[], char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]) {
     if(strstr(buffer, no_process_opening_tag)){
         mode = NO_PROCESS;
     } else if(strstr(buffer, attribute_opening_tag)){
@@ -135,6 +165,7 @@ int process_text() {
             process_table_text(buffer, attributes);
         }
     }
+    return mode;
 }
 
 /**
@@ -204,7 +235,8 @@ int process_delimiter(int mode, char c, char attributes[COLUMN_SIZE][ATTRIBUTE_S
 }
 
 /**
- * Switches mode to delimiter when encountering a blank character and prints closing td tag
+ * Switches mode to delimiter when encountering a blank character
+ * and prints closing td tag
  * Prints charcter otherwise
  * @param mode
  * @param c

@@ -61,7 +61,8 @@ void format_text_table_output(char opening_table_tag[], char closing_table_tag[]
                     mode = process_delimiter(c, opening_column_tag, mode);
                 break;
                 case NEW_LINE:
-                    mode = process_new_line(c, opening_table_tag, opening_row_tag, opening_column_tag, mode, containsText);
+                    mode = process_new_line(c, opening_table_tag, opening_row_tag,
+                                            opening_column_tag, mode, containsText);
                 break;
             }
         }
@@ -125,7 +126,8 @@ int process_delimiter(char c, char opening_column_tag[], int mode) {
  * @param containsText
  * @return
  */
-int process_new_line(char c, char opening_table_tag[], char opening_row_tag[], char opening_column_tag[], int mode, int containsText) {
+int process_new_line(char c, char opening_table_tag[], char opening_row_tag[],
+                     char opening_column_tag[], int mode, int containsText) {
     if(c != ' ' && c != '\t' && c != '\n'){
         if(containsText == 0){
             printf("%s\n", opening_table_tag);
