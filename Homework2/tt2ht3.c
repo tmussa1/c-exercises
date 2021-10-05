@@ -11,9 +11,6 @@
 #define ATTRIBUTE 2
 #define TEXT 3
 
-/**
- * This two associated with the outer finite state machine
- */
 #define DELIMITER 4
 #define COLUMN_TEXT 5
 
@@ -26,7 +23,7 @@ int is_blank(char buffer[]);
 void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE], char * delimiter);
 char * strsep (char **stringp, const char *delim);
 
-//Outer state machine functions
+// Finite state machine helper functions
 int process_no_process(int mode, char buffer[], char no_process_closing_tag[]);
 int process_attribute(int mode, char buffer[], char attribute_opening_tag[],
                       char attribute_closing_tag[], int length,
@@ -35,12 +32,18 @@ int process_attribute(int mode, char buffer[], char attribute_opening_tag[],
 int process_blank_space(int mode, char buffer[], char no_process_opening_tag[], char attribute_opening_tag[],
                         char delimiter_tag[], char delimiter[], int length, char opening_row_tag[],
                         char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]);
+int process_text(int mode, char buffer[], char no_process_opening_tag[], char attribute_opening_tag[],
+                 char delimiter_tag[], char delimiter[], int length, char opening_row_tag[],
+                 char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]);
 
 int main(){
     format_text_table_with_metadata();
     return 0;
 }
 
+/**
+ * Driver function for reading delimiter separated text
+ */
 void format_text_table_with_metadata(){
 
     int bufferLength = 255;
@@ -48,7 +51,7 @@ void format_text_table_with_metadata(){
     int mode = BLANK_SPACE;
     char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE] = {{0}};
     int current_attribute_index = 0;
-    char delimiter[DELIMITER_SIZE] = " ";
+    char delimiter[DELIMITER_SIZE] = " "; // Delimiter by default blank space
     char delimiter_tag[]= "<delim";
     char attribute_opening_tag[] = "<attributes>";
     char attribute_closing_tag[] = "</attributes>";
@@ -73,21 +76,9 @@ void format_text_table_with_metadata(){
                                            attributes);
                 break;
             case TEXT:
-                if(strstr(buffer, no_process_opening_tag)){
-                    mode = NO_PROCESS;
-                } else if(strstr(buffer, attribute_opening_tag)){
-                    mode = ATTRIBUTE;
-                } else if(strstr(buffer, delimiter_tag)) {
-                    char * token = strtok(buffer, "=");
-                    token = strtok(NULL, "=");
-                    delimiter[0] = token[0];
-                    delimiter[1] = '\0';
-                } else {
-                    if (length > 0 && !is_blank(buffer)) {
-                        printf("\t%s\n\t", opening_row_tag);
-                        process_table_text(buffer, attributes, delimiter);
-                    }
-                }
+                mode = process_text(mode, buffer, no_process_opening_tag, attribute_opening_tag,
+                                    delimiter_tag, delimiter, length, opening_row_tag,
+                            attributes);
                 break;
         }
     }
@@ -144,6 +135,20 @@ int process_attribute(int mode, char buffer[], char attribute_opening_tag[],
     return mode;
 }
 
+/**
+ * Works the same way as version 2 except for saving a delimiter
+ * when finding one
+ * @param mode
+ * @param buffer
+ * @param no_process_opening_tag
+ * @param attribute_opening_tag
+ * @param delimiter_tag
+ * @param delimiter
+ * @param length
+ * @param opening_row_tag
+ * @param attributes
+ * @return
+ */
 int process_blank_space(int mode, char buffer[], char no_process_opening_tag[], char attribute_opening_tag[],
                         char delimiter_tag[], char delimiter[], int length, char opening_row_tag[],
                         char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]) {
@@ -154,12 +159,46 @@ int process_blank_space(int mode, char buffer[], char no_process_opening_tag[], 
     } else if(strstr(buffer, delimiter_tag)) {
         char * token = strtok(buffer, "=");
         token = strtok(NULL, "=");
-        delimiter[0] = token[0];
+        delimiter[0] = token[0]; // Save delimiter
         delimiter[1] = '\0';
     } else if(length > 0 && !is_blank(buffer)){
         mode = TEXT;
         printf("\t%s\n\t", opening_row_tag);
         process_table_text(buffer, attributes, delimiter);
+    }
+    return mode;
+}
+
+/**
+ * Works the same way as version 2 except for saving a delimiter
+ * @param mode
+ * @param buffer
+ * @param no_process_opening_tag
+ * @param attribute_opening_tag
+ * @param delimiter_tag
+ * @param delimiter
+ * @param length
+ * @param opening_row_tag
+ * @param attributes
+ * @return
+ */
+int process_text(int mode, char buffer[], char no_process_opening_tag[], char attribute_opening_tag[],
+                 char delimiter_tag[], char delimiter[], int length, char opening_row_tag[],
+                 char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]) {
+    if(strstr(buffer, no_process_opening_tag)){
+        mode = NO_PROCESS;
+    } else if(strstr(buffer, attribute_opening_tag)){
+        mode = ATTRIBUTE;
+    } else if(strstr(buffer, delimiter_tag)) {
+        char * token = strtok(buffer, "=");
+        token = strtok(NULL, "=");
+        delimiter[0] = token[0]; // Save delimiter
+        delimiter[1] = '\0';
+    } else {
+        if (length > 0 && !is_blank(buffer)) {
+            printf("\t%s\n\t", opening_row_tag);
+            process_table_text(buffer, attributes, delimiter);
+        }
     }
     return mode;
 }
