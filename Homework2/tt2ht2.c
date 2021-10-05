@@ -21,11 +21,19 @@
 
 void format_text_table_with_metadata();
 int is_blank(char buffer[]);
+
+// Inner state machine functions
 void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]);
 int process_delimiter(int mode, char c, char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE],
                       int * current_attribute_index, char opening_column_tag[],
                       char closing_angle_bracket[]);
 int process_column_text(int mode, char c, char closing_column_tag[]);
+
+//Outer state machine functions
+int process_no_process(int mode, char buffer[], char no_process_closing_tag[]);
+int process_attribute(int mode, char buffer[], char attribute_opening_tag[],
+                      char attribute_closing_tag[], int length,
+                      int * current_attribute_index, char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE])
 
 int main(){
     format_text_table_with_metadata();
@@ -50,49 +58,73 @@ void format_text_table_with_metadata(){
         size_t length = strlen(buffer);
         switch(mode){
             case NO_PROCESS:
-                if(strstr(buffer, no_process_closing_tag)){
-                    mode = BLANK_SPACE;
-                } else {
-                    printf("%s", buffer);
-                }
+               mode = process_no_process(mode, buffer, no_process_closing_tag);
             break;
             case ATTRIBUTE:
-                if(strstr(buffer, attribute_closing_tag)){
-                    mode = BLANK_SPACE;
-                } else {
-                    if(strstr(buffer, attribute_opening_tag)){
-                        current_attribute_index = 0;
-                    } else {
-                        if(current_attribute_index < COLUMN_SIZE && length < ATTRIBUTE_SIZE){
-                            buffer[length - 1] = '\0'; // Skip the last new line character
-                            strcpy(attributes[current_attribute_index++], buffer);
-                        }
-                    }
-                }
+                mode = process_attribute(mode, buffer, attribute_opening_tag,
+                                         attribute_closing_tag, length,
+                                         &current_attribute_index, attributes);
             break;
             case BLANK_SPACE:
-                if(strstr(buffer, no_process_opening_tag)){
-                    mode = NO_PROCESS;
-                } else if(strstr(buffer, attribute_opening_tag)){
-                    mode = ATTRIBUTE;
-                } else if(length > 0){
-                    mode = TEXT;
-                    printf("\t%s\n\t", opening_row_tag);
-                    process_table_text(buffer, attributes);
-                }
+                mode = process_blank_space();
             break;
             case TEXT:
-                if(strstr(buffer, no_process_opening_tag)){
-                    mode = NO_PROCESS;
-                } else if(strstr(buffer, attribute_opening_tag)){
-                    mode = ATTRIBUTE;
-                } else {
-                    if(length > 0 && !is_blank(buffer)){
-                        printf("\t%s\n\t", opening_row_tag);
-                        process_table_text(buffer, attributes);
-                    }
-                }
+                mode = process_text();
             break;
+        }
+    }
+}
+
+int process_no_process(int mode, char buffer[], char no_process_closing_tag[]){
+    if(strstr(buffer, no_process_closing_tag)){
+        mode = BLANK_SPACE;
+    } else {
+        printf("%s", buffer);
+    }
+    return mode;
+}
+
+int process_attribute(int mode, char buffer[], char attribute_opening_tag[],
+                      char attribute_closing_tag[], int length,
+                      int * current_attribute_index, char attributes[COLUMN_SIZE][ATTRIBUTE_SIZE]){
+    if(strstr(buffer, attribute_closing_tag)){
+        mode = BLANK_SPACE;
+    } else {
+        if(strstr(buffer, attribute_opening_tag)){
+            // Reset the attributes array if encountering a nested attribute tag
+            *current_attribute_index = 0;
+        } else {
+            // Check for overflow
+            if(current_attribute_index < COLUMN_SIZE && length < ATTRIBUTE_SIZE){
+                buffer[length - 1] = '\0'; // Skip the last new line character
+                strcpy(attributes[(*current_attribute_index)++], buffer);
+            }
+        }
+    }
+    return mode;
+}
+
+int process_blank_space(){
+    if(strstr(buffer, no_process_opening_tag)){
+        mode = NO_PROCESS;
+    } else if(strstr(buffer, attribute_opening_tag)){
+        mode = ATTRIBUTE;
+    } else if(length > 0){
+        mode = TEXT;
+        printf("\t%s\n\t", opening_row_tag);
+        process_table_text(buffer, attributes);
+    }
+}
+
+int process_text() {
+    if(strstr(buffer, no_process_opening_tag)){
+        mode = NO_PROCESS;
+    } else if(strstr(buffer, attribute_opening_tag)){
+        mode = ATTRIBUTE;
+    } else {
+        if(length > 0 && !is_blank(buffer)){
+            printf("\t%s\n\t", opening_row_tag);
+            process_table_text(buffer, attributes);
         }
     }
 }
