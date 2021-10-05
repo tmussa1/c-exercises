@@ -129,7 +129,7 @@ int process_attribute(int mode, char buffer[], char attribute_opening_tag[],
             *current_attribute_index = 0;
         } else {
             // Check for overflow
-            if(current_attribute_index < COLUMN_SIZE && length < ATTRIBUTE_SIZE){
+            if(*current_attribute_index < COLUMN_SIZE && length < ATTRIBUTE_SIZE){
                 buffer[length - 1] = '\0'; // Skip the last new line character
                 strcpy(attributes[(*current_attribute_index)++], buffer);
             }
