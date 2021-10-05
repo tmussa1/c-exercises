@@ -17,11 +17,15 @@
           * gcc -Wall -Wextra tt2ht2.c -o tt2ht2
       * How to test it
           * ./tt2ht2 < sample_metadata.txt
+          * ./tt2ht2 < blank.txt
 ##### Part 4b - Testing part 4a with cgi program
       * URL - https://cscie26.dce.harvard.edu/~tom976/hw2/part4b.cgi
 ##### Part 5 - Delimiter separated columns converted to HTML Table
       * How to run it
           * gcc -Wall -Wextra tt2ht3.c -o tt2ht3
       * How to test it 
+         * ./tt2ht3 < sample_metadata.txt
          * ./tt2ht3 < sample_metadata2.txt
+         * ./tt2ht3 < sample_metadata3.txt
+         * ./tt2ht3 < sample_version3.txt
            
