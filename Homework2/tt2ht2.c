@@ -157,7 +157,7 @@ int process_blank_space(int mode, char buffer[], char no_process_opening_tag[],
         mode = NO_PROCESS;
     } else if(strstr(buffer, attribute_opening_tag)){
         mode = ATTRIBUTE;
-    } else if(length > 0){
+    } else if(length > 0 && !is_blank(buffer)){
         mode = TEXT;
         printf("\t%s\n\t", opening_row_tag);
         process_table_text(buffer, attributes);
