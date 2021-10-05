@@ -228,6 +228,9 @@ void process_table_text(char buffer[], char attributes[COLUMN_SIZE][ATTRIBUTE_SI
             }
         }
         printf("%s",closing_angle_bracket);
+        if(word[strlen(word) - 1] == '\n') {
+            word[strlen(word) - 1] = '\0'; // Get rid of new line
+        }
         printf("%s", word);
         printf("%s", closing_column_tag);
     }
