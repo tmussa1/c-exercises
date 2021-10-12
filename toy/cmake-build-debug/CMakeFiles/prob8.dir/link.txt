@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\prob8.dir/objects.a
-C:\msys64\mingw64\bin\ar.exe cr CMakeFiles\prob8.dir/objects.a @CMakeFiles\prob8.dir\objects1.rsp
-C:\msys64\mingw64\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\prob8.dir/objects.a -Wl,--no-whole-archive -o prob8.exe -Wl,--out-implib,libprob8.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\prob8.dir\linklibs.rsp
