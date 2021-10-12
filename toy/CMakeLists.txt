@@ -7,5 +7,5 @@ add_executable(prob2 prob2.c)
 add_executable(prob3 prob3.c)
 add_executable(prob7 prob7.c)
 add_executable(prob8 prob8.c)
-add_executable(prob10 prob10.c)
+add_executable(delete_chars delete_chars.c)
 

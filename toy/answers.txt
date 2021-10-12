@@ -86,7 +86,7 @@ Answers
 	arithmetic which returns 'd' 
 	
 10 
-  -  Please look at prob10.c
+  -  Please look at delete_chars.c
 
 12 
   - The former is an array of structs and the latter is an array of struct pointers
