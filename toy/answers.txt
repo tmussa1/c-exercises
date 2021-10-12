@@ -1,0 +1,95 @@
+Answers
+
+1 - A pointer is a piece of variable that can store an address
+
+2 - Please look at prob2.c for program and prob2.png for picture
+
+  - Sample output
+		t=hi and &t=00007ff6daa48010
+		m=arrays != pointers and &m=00000025b91ff8c0
+		x=00000025b91ff880 *x=77 &x=00000025b91ff8b8
+		y=00000025b91ff8c5 *y=s &y=00000025b91ff8b0
+		z=00000025b91ff89c *z=73 &z=00000025b91ff8a8
+		w=00000025b91ff8b8 *w=00000025b91ff880 **w=77 &w=00000025b91ff8a0
+		a=73 &a=00000025b91ff89c
+		b=00000025b91ff880 *b=77 &b=00000025b91ff880
+		
+3 
+  - Output of program
+    m is 3749707088, &m is 3749707088, &m[0] is 3749707088, m[0] is 4
+	p is 3749707096, &p is 3749707080, &p[0] is 3749707096, p[0] is 2
+	
+  - Please look prob3.png for diagram
+  
+  - First three letters of the first printf are the same because the name of an array in C contains its address which
+    in other words is the address of the element at index 0
+	
+  - The value of a pointer stores the address of another variable and the pointer's in question own address is different from
+    what is stored in it 
+	
+  - p[-1] is 3 and p[-2] is 4 because they are 1 and 2 sizeof(int) units away from the element at index 2 of m array respectively
+  
+4 
+  a - 4
+  b - 4 
+  c - 2 
+  d - 6
+  e - 4
+  
+5 
+  a - a[0]
+  b - a[3]
+  c - a[12]
+  d - a[2]
+  e - a[-10]
+  
+6 
+  a - 6
+  b - 3
+  c - 4
+  d - 5
+  e - 7
+  f - 5
+  g - 7
+  h - 1 
+  
+7 
+  - Program output 
+		david, p is in 000000468a3ffd6e. &p[0]=000000468a3ffd30
+		arol, p is in 000000468a3ffd65. &p[1]=000000468a3ffd38
+		n, p is in 000000468a3ffd5c. &p[2]=000000468a3ffd40
+		a, p is in 000000468a3ffd53. &p[3]=000000468a3ffd48
+		anna, names is in 000000468a3ffd50, names[0]=000000468a3ffd50
+		ben, names is in 000000468a3ffd5a, names[1]=000000468a3ffd5a
+		carol, names is in 000000468a3ffd64, names[2]=000000468a3ffd64
+		david, names is in 000000468a3ffd6e, names[3]=000000468a3ffd6e
+		
+   - Please see prob7.png for pictures 
+   
+   - The array of pointers don't have enough storage allocated so the space available to 
+     copy characters to is limited by what was previously in the location
+	 
+8 
+  - Please look at prob8.png for diagrams 
+  
+  - Program output
+	  October is a fall month, month=000000fb897ff800 season=00007ff69b5c9000
+	  February is a winter month, month=000000fb897ff800 season=00007ff69b5c902e
+	  April is a spring month, month=000000fb897ff800 season=00007ff69b5c9035
+  
+  - Syntax error - can't assign char arrays, use strcpy instead
+  - Runtime error - can't strcpy char pointers, use assignment instead
+  
+9 
+  - putchar("abcde"[3]) is legal because "abcde" resolves to the address of the array or 
+    in other words the address of the element at index 0. "abcde"[3] is like doing *(p+3) pointer 
+	arithmetic which returns 'd' 
+	
+10 
+  -  Please look at prob10.c
+
+12 
+  - The former is an array of structs and the latter is an array of struct pointers
+  - We need to access the properties of the struct with -> notation instead of . as the former
+  - -> operator dereferences pointers
+  - Please look at prob12.png for diagrams
