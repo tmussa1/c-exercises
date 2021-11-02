@@ -24,7 +24,7 @@ void convert_to_lower_case(char *);
 int
 main()
 {
-	char	buf[BUFLEN], *wordptr;
+	char buf[BUFLEN], *wordptr;
 
 	/* ... set up word filing module ... */
 
