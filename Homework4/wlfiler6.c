@@ -50,23 +50,33 @@ void init_table()
     }
 }
 
-int validate_string(char str[])
+/**
+ * AN auxiliary function that checks if the first letter is a valid
+ * small letter character
+ * @param str
+ * @return YES or NO
+ */
+static int validate_string(char str[])
 {
     if(strlen(str) == 0){
         return NO;
     }
 
     char first_letter = str[0];
-    int index = first_letter - 'a';
 
-    if(index < 0 || index >= ARRAY_SIZE){
+    if(first_letter < 'a' || first_letter > 'z'){
         return NO;
     }
 
     return YES;
 }
 
-LINK * find_previous_node(char str[])
+/**
+ * Returns the node before the node containing the word
+ * @param str
+ * @return LINK
+ */
+static LINK * find_previous_node(char str[])
 {
 
     if(validate_string(str)){
@@ -76,9 +86,14 @@ LINK * find_previous_node(char str[])
         LINK * linkp = hash_table[index].next, * prev = &hash_table[index];
 
         while(linkp != NULL) {
-            if(strcmp(linkp->word, str) > 0) {
-                return prev;
+
+            if(strcmp(linkp->word, str) == 0) {
+                return prev; // Found it
             }
+            else if(strcmp(linkp->word, str) > 0) {
+                return NULL; // Exit early
+            }
+
             prev = linkp;
             linkp = linkp->next;
         }
@@ -87,7 +102,12 @@ LINK * find_previous_node(char str[])
     return NULL;
 }
 
-LINK * find_node(char str[])
+/**
+ * Returns the node containing word
+ * @param str
+ * @return LINK
+ */
+static LINK * find_node(char str[])
 {
 
     if(validate_string(str)) {
@@ -96,19 +116,26 @@ LINK * find_node(char str[])
 
         LINK * linkp = hash_table[index].next;
 
+        // Traverse the table to find node
         while (linkp != NULL) {
             if (strcmp(linkp->word, str) == 0) {
                 return linkp;
             } else if (strcmp(linkp->word, str) > 0) {
-                return NULL;
+                return NULL; // Exit early
             }
 
             linkp = linkp->next;
         }
     }
+
     return NULL;
 }
 
+/**
+ * Checks if a word is in the table
+ * @param str
+ * @return YES or NO
+ */
 int	in_table(char str[])
 {
     LINK * node = find_node(str);
@@ -141,13 +168,45 @@ LINK * intialize_new_link(char str[], int value)
         return NULL;
     }
 
+    // Copy word and its value
     newlink->word = newstr;
     newlink->value = value;
 
     return newlink;
 }
 
+/**
+ * Finds the correct position to insert a word
+ * @param str
+ * @return LINK
+ */
+static LINK * find_correct_position(char str[])
+{
+    char first_letter = str[0];
+    int index = first_letter - 'a';
 
+    LINK * node = hash_table[index].next, * prev = &hash_table[index];
+
+    while(node){
+
+        // Correct position to insert word
+        if(strcmp(node->word, str) > 0){
+            break;
+        }
+
+        prev = node;
+        node = node->next;
+    }
+
+    return prev;
+};
+
+/**
+ * Inserts word to the correct position in sorted order
+ * @param str
+ * @param value
+ * @return YES or NO
+ */
 int	insert(char str[], int value)
 {
 
@@ -160,20 +219,9 @@ int	insert(char str[], int value)
             return NO;
         }
 
-        char first_letter = str[0];
-        int index = first_letter - 'a';
-
-        LINK * node = hash_table[index].next, * prev = &hash_table[index];
-
-        while(node){
-
-            if(strcmp(node->word, str) > 0){
-                break;
-            }
-
-            prev = node;
-            node = node->next;
-        }
+        // Correct position in sorted order
+        // Will be inserted first com first serve when there are duplicates
+        LINK * prev = find_correct_position(str);
 
         newlink->next = prev->next;
         prev->next = newlink;
@@ -184,6 +232,11 @@ int	insert(char str[], int value)
     return NO;
 }
 
+/**
+ * Returns the value associated with a word
+ * @param str
+ * @return value
+ */
 int	lookup(char str[])
 {
     // Find the node if exists
@@ -243,7 +296,7 @@ char * nextword()
         return NULL;
     }
 
-    // Return value
+    // Keep return value
     retval = current_link->word;
     current_link = current_link->next;
 
@@ -257,14 +310,15 @@ char * nextword()
 int	word_delete(char str[])
 {
 
-    LINK * node = find_node(str);
+    // Finds the previous node
+    LINK * prev = find_previous_node(str);
+
+    // The next node is the node containing the word
+    LINK * node = prev->next;
 
     if(node == NULL){
         return NO;
     }
-
-    // Finds the previous node
-    LINK * prev = find_previous_node(str);
 
     // Works even if prev is the head pointer
     // Sets prev->next to null if prev was head

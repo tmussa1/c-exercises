@@ -308,7 +308,7 @@ LINK * find_previous_node(char str[]) {
         if(strcmp(linkp->word, str) == 0) {
             return prev;
         }
-        // TODO - stop finding if > 0
+        // TODO - stop finding if > 0, delete unneeded files
         // TODO - append null terminator
 
         // Previous is trailing one step behind

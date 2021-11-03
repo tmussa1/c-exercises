@@ -2,6 +2,7 @@
 #include	<stdlib.h>
 #include	<ctype.h>
 #include	"wl.h"
+#include	<string.h>
 
 /*
  *	wordlist	main module
@@ -21,10 +22,12 @@
  */
 
 void convert_to_lower_case(char *);
+char * read_word();
+
 int
 main()
 {
-	char buf[BUFLEN], *wordptr;
+	char * wordptr;
 
 	/* ... set up word filing module ... */
 
@@ -32,11 +35,12 @@ main()
 
 	/* ... read words and store them ... */
 
-	while ( scanf("%s", buf) == 1 ){
-		convert_to_lower_case( buf );
-		if ( in_table( buf ) == YES )
-			update( buf, 1 + lookup( buf ) );
-		else if ( insert( buf, 1 ) == NO ){
+    // Read arbitrary number of characters in a word
+	while ((wordptr = read_word())){
+		convert_to_lower_case( wordptr );
+		if ( in_table( wordptr ) == YES )
+			update( wordptr, 1 + lookup( wordptr ) );
+		else if ( insert( wordptr, 1 ) == NO ){
 			fprintf(stderr,"wordfreq: out of memory\n");
 			exit(1);
 		}
@@ -65,4 +69,37 @@ convert_to_lower_case( char *str )
 		*str = tolower( (int) *str );
 		str++;
 	}
+}
+
+/**
+ * Reads arbitrary length of a word
+ * @return char pointer
+ */
+char * read_word()
+{
+    int c, CHUNK_SIZE = 10, WORD_LENGTH = 0, ARRAY_SIZE = 0;
+    char * word = NULL;
+
+    while((c = getchar()) != EOF)
+    {
+        if(isspace(c) || c == EOF){
+
+            if(WORD_LENGTH > 0){ // Found word
+                word[WORD_LENGTH] = '\0';
+                return strdup(word);
+            }
+
+        } else {
+
+            if(WORD_LENGTH >= ARRAY_SIZE - 2){
+                // Allocate enough space to contain the word
+                ARRAY_SIZE += CHUNK_SIZE;
+                word = realloc(word, ARRAY_SIZE);
+            }
+
+            word[WORD_LENGTH++] = c; // Copy the character
+        }
+    }
+
+    return NULL;
 }
