@@ -325,7 +325,7 @@ int	word_delete(char str[])
     prev->next = node->next;
 
     free(node->word);
-    free(node);
+    free(node); // Free up memory
 
     return YES;
 }
