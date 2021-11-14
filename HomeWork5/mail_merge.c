@@ -8,6 +8,7 @@
  */
 #define PLACE_HOLDER 5 // TODO - ask about name collision
 #define TEXT 6
+#define EXIT 7
 
 /**
  * Function declarations
@@ -31,7 +32,7 @@ void mailmerge(symtab_t * tp, FILE * fp)
         {
             case TEXT:
                 mode = process_text(c, mode); // TODO - ask Bruce about returning 2 sets of things
-                if(mode == YES) return; // Exit reaching EOF
+                if(mode == EXIT) break; // Exit reaching EOF
             break;
             case PLACE_HOLDER:
                 mode = process_place_holder(tp, c, mode, field_holder, &field_count);
@@ -55,7 +56,7 @@ int process_text(int c, int mode)
     if(c == '%')
         mode = PLACE_HOLDER; // Beginning of place holder
     else if(c == EOF)
-        return YES; // End reading
+        return EXIT; // End reading
     else
         putchar(c);
 
