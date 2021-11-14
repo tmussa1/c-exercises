@@ -80,6 +80,8 @@ int process_place_holder(symtab_t * tp,
         {
             field_holder[(*field_count)] = '\0';
             printf("%s", lookup(tp, field_holder)); // Print value
+            *field_count = 0;
+            field_holder[(*field_count)] = '\0';
             mode = TEXT; // Change to text state
         }
         else // User may want to print '%' if the string in between is null

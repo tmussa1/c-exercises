@@ -145,6 +145,7 @@ int process_value(int c, int mode,
             if (insert(tp, field, value) == NO)
                 fatal("Can not insert record", value);
         }
+        printf("tofik %s %s", field, value);
         return YES; // Record was successfully inserted
     }
     else
