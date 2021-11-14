@@ -9,6 +9,10 @@ CMakeFiles/HomeWork5.dir/process.c.obj: \
  ../fl.h \
  ../process.c \
  ../ws13.h
+CMakeFiles/HomeWork5.dir/process_records.c.obj: \
+ ../fl.h \
+ ../process_records.c \
+ ../ws13.h
 CMakeFiles/HomeWork5.dir/wordstore13.c.obj: \
  ../wordstore13.c \
  ../ws13.h

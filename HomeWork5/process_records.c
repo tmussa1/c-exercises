@@ -56,7 +56,7 @@ int	get_record(symtab_t * tp, FILE *fp)
                 mode = process_field(c, mode, field, field_count);
             break;
             case VALUE:
-                mode = process_value(c, mode, value, value_count, field, field_count, tp);
+                mode = process_value(c, mode, value, value_count, field, tp);
                 if(mode == YES) { // TODO - ask Bruce about freeing up memory
                     value_count = field_count = 0; // Reset field and value counts
                     field[field_count] = value[value_count] = '\0'; // Clear string

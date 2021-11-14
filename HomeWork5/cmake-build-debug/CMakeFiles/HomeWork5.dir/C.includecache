@@ -6,33 +6,17 @@
 
 #IncludeRegexTransform: 
 
-D:/MS in CS/CSCI E-26/projects/HomeWork5/fl.c
-stdio.h
--
-stdlib.h
--
-fl.h
-D:/MS in CS/CSCI E-26/projects/HomeWork5/fl.h
-
 D:/MS in CS/CSCI E-26/projects/HomeWork5/fl.h
 ws13.h
 D:/MS in CS/CSCI E-26/projects/HomeWork5/ws13.h
 
-D:/MS in CS/CSCI E-26/projects/HomeWork5/process.c
+D:/MS in CS/CSCI E-26/projects/HomeWork5/process_records.c
 stdio.h
+-
+ctype.h
 -
 fl.h
 D:/MS in CS/CSCI E-26/projects/HomeWork5/fl.h
-ws13.h
-D:/MS in CS/CSCI E-26/projects/HomeWork5/ws13.h
-
-D:/MS in CS/CSCI E-26/projects/HomeWork5/wordstore13.c
-stdio.h
--
-stdlib.h
--
-string.h
--
 ws13.h
 D:/MS in CS/CSCI E-26/projects/HomeWork5/ws13.h
 
