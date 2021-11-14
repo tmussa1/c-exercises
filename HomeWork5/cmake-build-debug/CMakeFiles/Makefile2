@@ -80,12 +80,12 @@ clean: CMakeFiles/HomeWork5.dir/clean
 CMakeFiles/HomeWork5.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\HomeWork5.dir\build.make CMakeFiles/HomeWork5.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\HomeWork5.dir\build.make CMakeFiles/HomeWork5.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\MS in CS\CSCI E-26\projects\HomeWork5\cmake-build-debug\CMakeFiles" --progress-num=1,2,3,4,5 "Built target HomeWork5"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\MS in CS\CSCI E-26\projects\HomeWork5\cmake-build-debug\CMakeFiles" --progress-num=1,2,3,4,5,6 "Built target HomeWork5"
 .PHONY : CMakeFiles/HomeWork5.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/HomeWork5.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "D:\MS in CS\CSCI E-26\projects\HomeWork5\cmake-build-debug\CMakeFiles" 5
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\MS in CS\CSCI E-26\projects\HomeWork5\cmake-build-debug\CMakeFiles" 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/HomeWork5.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "D:\MS in CS\CSCI E-26\projects\HomeWork5\cmake-build-debug\CMakeFiles" 0
 .PHONY : CMakeFiles/HomeWork5.dir/rule

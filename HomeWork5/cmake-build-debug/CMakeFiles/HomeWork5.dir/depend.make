@@ -5,13 +5,17 @@ CMakeFiles/HomeWork5.dir/fl.c.obj: \
  ../fl.c \
  ../fl.h \
  ../ws13.h
+CMakeFiles/HomeWork5.dir/mail_merge.c.obj: \
+ ../fl.h \
+ ../mail_merge.c \
+ ../ws13.h
 CMakeFiles/HomeWork5.dir/process.c.obj: \
  ../fl.h \
  ../process.c \
  ../ws13.h
-CMakeFiles/HomeWork5.dir/process_records.c.obj: \
+CMakeFiles/HomeWork5.dir/process_record.c.obj: \
  ../fl.h \
- ../process_records.c \
+ ../process_record.c \
  ../ws13.h
 CMakeFiles/HomeWork5.dir/wordstore13.c.obj: \
  ../wordstore13.c \

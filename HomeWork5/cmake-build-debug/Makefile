@@ -152,6 +152,30 @@ fl.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\HomeWork5.dir\build.make CMakeFiles/HomeWork5.dir/fl.c.s
 .PHONY : fl.c.s
 
+mail_merge.obj: mail_merge.c.obj
+.PHONY : mail_merge.obj
+
+# target to build an object file
+mail_merge.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HomeWork5.dir\build.make CMakeFiles/HomeWork5.dir/mail_merge.c.obj
+.PHONY : mail_merge.c.obj
+
+mail_merge.i: mail_merge.c.i
+.PHONY : mail_merge.i
+
+# target to preprocess a source file
+mail_merge.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HomeWork5.dir\build.make CMakeFiles/HomeWork5.dir/mail_merge.c.i
+.PHONY : mail_merge.c.i
+
+mail_merge.s: mail_merge.c.s
+.PHONY : mail_merge.s
+
+# target to generate assembly for a file
+mail_merge.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HomeWork5.dir\build.make CMakeFiles/HomeWork5.dir/mail_merge.c.s
+.PHONY : mail_merge.c.s
+
 process.obj: process.c.obj
 .PHONY : process.obj
 
@@ -176,29 +200,29 @@ process.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\HomeWork5.dir\build.make CMakeFiles/HomeWork5.dir/process.c.s
 .PHONY : process.c.s
 
-process_records.obj: process_records.c.obj
-.PHONY : process_records.obj
+process_record.obj: process_record.c.obj
+.PHONY : process_record.obj
 
 # target to build an object file
-process_records.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HomeWork5.dir\build.make CMakeFiles/HomeWork5.dir/process_records.c.obj
-.PHONY : process_records.c.obj
+process_record.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HomeWork5.dir\build.make CMakeFiles/HomeWork5.dir/process_record.c.obj
+.PHONY : process_record.c.obj
 
-process_records.i: process_records.c.i
-.PHONY : process_records.i
+process_record.i: process_record.c.i
+.PHONY : process_record.i
 
 # target to preprocess a source file
-process_records.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HomeWork5.dir\build.make CMakeFiles/HomeWork5.dir/process_records.c.i
-.PHONY : process_records.c.i
+process_record.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HomeWork5.dir\build.make CMakeFiles/HomeWork5.dir/process_record.c.i
+.PHONY : process_record.c.i
 
-process_records.s: process_records.c.s
-.PHONY : process_records.s
+process_record.s: process_record.c.s
+.PHONY : process_record.s
 
 # target to generate assembly for a file
-process_records.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HomeWork5.dir\build.make CMakeFiles/HomeWork5.dir/process_records.c.s
-.PHONY : process_records.c.s
+process_record.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HomeWork5.dir\build.make CMakeFiles/HomeWork5.dir/process_record.c.s
+.PHONY : process_record.c.s
 
 wordstore13.obj: wordstore13.c.obj
 .PHONY : wordstore13.obj
@@ -236,12 +260,15 @@ help:
 	@echo ... fl.obj
 	@echo ... fl.i
 	@echo ... fl.s
+	@echo ... mail_merge.obj
+	@echo ... mail_merge.i
+	@echo ... mail_merge.s
 	@echo ... process.obj
 	@echo ... process.i
 	@echo ... process.s
-	@echo ... process_records.obj
-	@echo ... process_records.i
-	@echo ... process_records.s
+	@echo ... process_record.obj
+	@echo ... process_record.i
+	@echo ... process_record.s
 	@echo ... wordstore13.obj
 	@echo ... wordstore13.i
 	@echo ... wordstore13.s

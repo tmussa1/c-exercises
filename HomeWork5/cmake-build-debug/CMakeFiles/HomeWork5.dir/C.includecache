@@ -10,7 +10,17 @@ D:/MS in CS/CSCI E-26/projects/HomeWork5/fl.h
 ws13.h
 D:/MS in CS/CSCI E-26/projects/HomeWork5/ws13.h
 
-D:/MS in CS/CSCI E-26/projects/HomeWork5/process_records.c
+D:/MS in CS/CSCI E-26/projects/HomeWork5/mail_merge.c
+stdio.h
+-
+string.h
+-
+fl.h
+D:/MS in CS/CSCI E-26/projects/HomeWork5/fl.h
+ws13.h
+D:/MS in CS/CSCI E-26/projects/HomeWork5/ws13.h
+
+D:/MS in CS/CSCI E-26/projects/HomeWork5/process_record.c
 stdio.h
 -
 ctype.h

@@ -84,10 +84,13 @@
 		<Unit filename="D:/MS in CS/CSCI E-26/projects/HomeWork5/fl.h">
 			<Option target="HomeWork5"/>
 		</Unit>
+		<Unit filename="D:/MS in CS/CSCI E-26/projects/HomeWork5/mail_merge.c">
+			<Option target="HomeWork5"/>
+		</Unit>
 		<Unit filename="D:/MS in CS/CSCI E-26/projects/HomeWork5/process.c">
 			<Option target="HomeWork5"/>
 		</Unit>
-		<Unit filename="D:/MS in CS/CSCI E-26/projects/HomeWork5/process_records.c">
+		<Unit filename="D:/MS in CS/CSCI E-26/projects/HomeWork5/process_record.c">
 			<Option target="HomeWork5"/>
 		</Unit>
 		<Unit filename="D:/MS in CS/CSCI E-26/projects/HomeWork5/wordstore13.c">

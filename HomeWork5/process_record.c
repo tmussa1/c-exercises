@@ -29,9 +29,9 @@
 /**
 * Function declarations
 */
-int process_space(int c, int , char [], int);
-int process_field(int, int, char [], int);
-int process_value(int, int, char [], int, char[], symtab_t *);
+int process_space(int c, int , char [], int *);
+int process_field(int, int, char [], int *);
+int process_value(int, int, char [], int *, char[], symtab_t *);
 int check_bounds(int, int);
 
 /**
@@ -49,14 +49,14 @@ int	get_record(symtab_t * tp, FILE *fp)
     while((c = fgetc(fp)) != EOF){
         switch(mode){ // Starts on white space state
             case WHITE_SPACE:
-                mode = process_space(c, mode, field, field_count);
+                mode = process_space(c, mode, field, &field_count);
                 if(mode == YES) return YES; // Reached EOF or record delimiter
             break;
             case FIELD: // Process fields
-                mode = process_field(c, mode, field, field_count);
+                mode = process_field(c, mode, field, &field_count);
             break;
             case VALUE:
-                mode = process_value(c, mode, value, value_count, field, tp);
+                mode = process_value(c, mode, value, &value_count, field, tp);
                 if(mode == YES) { // TODO - ask Bruce about freeing up memory
                     value_count = field_count = 0; // Reset field and value counts
                     field[field_count] = value[value_count] = '\0'; // Clear string
@@ -65,6 +65,8 @@ int	get_record(symtab_t * tp, FILE *fp)
             break;
         }
     }
+    fclose(fp);
+
     return YES;
 }
 
@@ -78,7 +80,7 @@ int	get_record(symtab_t * tp, FILE *fp)
  * @param field_count
  * @return mode or status - YES, throws exception
  */
-int process_space(int c, int mode, char field[], int field_count)
+int process_space(int c, int mode, char field[], int * field_count)
 {
     if(c == '=')
         fatal("Value found without field name", "");
@@ -86,7 +88,7 @@ int process_space(int c, int mode, char field[], int field_count)
         return YES; // We are done and can exit
     else if(!isspace(c))
     {
-        field[field_count++] = c; // Store character
+        field[(*field_count)++] = c; // Store character
         mode = FIELD; // Change to field state
     }
     return mode;
@@ -103,12 +105,12 @@ int process_space(int c, int mode, char field[], int field_count)
  * @param field_count
  * @return mode
  */
-int process_field(int c, int mode, char field[], int field_count)
+int process_field(int c, int mode, char field[], int * field_count)
 {
     if(c == '=')
     {
         if(check_bounds(MAXFLD, field_count))
-            field[field_count] = '\0'; // Terminate array
+            field[(*field_count)] = '\0'; // Terminate array
         mode = VALUE;
     }
     else if(c == FDELIM || c == REDELIM)
@@ -116,7 +118,7 @@ int process_field(int c, int mode, char field[], int field_count)
     else
     {
         if(check_bounds(MAXFLD, field_count)) // Check bounds
-            field[field_count++] = c;
+            field[(*field_count)++] = c;
     }
 
     return mode;
@@ -129,10 +131,10 @@ int process_field(int c, int mode, char field[], int field_count)
  * @return status or mode
  */
 int process_value(int c, int mode,
-                  char value[], int value_count, char field[], symtab_t * tp)
+                  char value[], int *value_count, char field[], symtab_t * tp)
 {
     if(c == REDELIM || c == FDELIM) {
-        value[value_count] = '\0'; // Terminate array
+        value[(*value_count)++] = '\0'; // Terminate array
         if (in_table(tp, field) == YES)
         {
             if (update(tp, field, value) == NO)
@@ -148,7 +150,7 @@ int process_value(int c, int mode,
     else
     {
         if(check_bounds(MAXFLD, value_count))
-            value[value_count++] = c; // Put the character in correct spot
+            value[(*value_count)++] = c; // Put the character in correct spot
     }
 
     return mode; // Return mode and continue reading

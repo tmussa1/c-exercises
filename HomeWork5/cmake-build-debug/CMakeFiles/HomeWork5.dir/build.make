@@ -93,24 +93,38 @@ CMakeFiles/HomeWork5.dir/process.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HomeWork5.dir/process.c.s"
 	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\MS in CS\CSCI E-26\projects\HomeWork5\process.c" -o CMakeFiles\HomeWork5.dir\process.c.s
 
-CMakeFiles/HomeWork5.dir/process_records.c.obj: CMakeFiles/HomeWork5.dir/flags.make
-CMakeFiles/HomeWork5.dir/process_records.c.obj: CMakeFiles/HomeWork5.dir/includes_C.rsp
-CMakeFiles/HomeWork5.dir/process_records.c.obj: ../process_records.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\MS in CS\CSCI E-26\projects\HomeWork5\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/HomeWork5.dir/process_records.c.obj"
-	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\HomeWork5.dir\process_records.c.obj -c "D:\MS in CS\CSCI E-26\projects\HomeWork5\process_records.c"
+CMakeFiles/HomeWork5.dir/process_record.c.obj: CMakeFiles/HomeWork5.dir/flags.make
+CMakeFiles/HomeWork5.dir/process_record.c.obj: CMakeFiles/HomeWork5.dir/includes_C.rsp
+CMakeFiles/HomeWork5.dir/process_record.c.obj: ../process_record.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\MS in CS\CSCI E-26\projects\HomeWork5\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/HomeWork5.dir/process_record.c.obj"
+	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\HomeWork5.dir\process_record.c.obj -c "D:\MS in CS\CSCI E-26\projects\HomeWork5\process_record.c"
 
-CMakeFiles/HomeWork5.dir/process_records.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HomeWork5.dir/process_records.c.i"
-	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\MS in CS\CSCI E-26\projects\HomeWork5\process_records.c" > CMakeFiles\HomeWork5.dir\process_records.c.i
+CMakeFiles/HomeWork5.dir/process_record.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HomeWork5.dir/process_record.c.i"
+	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\MS in CS\CSCI E-26\projects\HomeWork5\process_record.c" > CMakeFiles\HomeWork5.dir\process_record.c.i
 
-CMakeFiles/HomeWork5.dir/process_records.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HomeWork5.dir/process_records.c.s"
-	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\MS in CS\CSCI E-26\projects\HomeWork5\process_records.c" -o CMakeFiles\HomeWork5.dir\process_records.c.s
+CMakeFiles/HomeWork5.dir/process_record.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HomeWork5.dir/process_record.c.s"
+	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\MS in CS\CSCI E-26\projects\HomeWork5\process_record.c" -o CMakeFiles\HomeWork5.dir\process_record.c.s
+
+CMakeFiles/HomeWork5.dir/mail_merge.c.obj: CMakeFiles/HomeWork5.dir/flags.make
+CMakeFiles/HomeWork5.dir/mail_merge.c.obj: CMakeFiles/HomeWork5.dir/includes_C.rsp
+CMakeFiles/HomeWork5.dir/mail_merge.c.obj: ../mail_merge.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\MS in CS\CSCI E-26\projects\HomeWork5\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/HomeWork5.dir/mail_merge.c.obj"
+	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\HomeWork5.dir\mail_merge.c.obj -c "D:\MS in CS\CSCI E-26\projects\HomeWork5\mail_merge.c"
+
+CMakeFiles/HomeWork5.dir/mail_merge.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HomeWork5.dir/mail_merge.c.i"
+	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\MS in CS\CSCI E-26\projects\HomeWork5\mail_merge.c" > CMakeFiles\HomeWork5.dir\mail_merge.c.i
+
+CMakeFiles/HomeWork5.dir/mail_merge.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HomeWork5.dir/mail_merge.c.s"
+	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\MS in CS\CSCI E-26\projects\HomeWork5\mail_merge.c" -o CMakeFiles\HomeWork5.dir\mail_merge.c.s
 
 CMakeFiles/HomeWork5.dir/wordstore13.c.obj: CMakeFiles/HomeWork5.dir/flags.make
 CMakeFiles/HomeWork5.dir/wordstore13.c.obj: CMakeFiles/HomeWork5.dir/includes_C.rsp
 CMakeFiles/HomeWork5.dir/wordstore13.c.obj: ../wordstore13.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\MS in CS\CSCI E-26\projects\HomeWork5\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/HomeWork5.dir/wordstore13.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\MS in CS\CSCI E-26\projects\HomeWork5\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/HomeWork5.dir/wordstore13.c.obj"
 	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\HomeWork5.dir\wordstore13.c.obj -c "D:\MS in CS\CSCI E-26\projects\HomeWork5\wordstore13.c"
 
 CMakeFiles/HomeWork5.dir/wordstore13.c.i: cmake_force
@@ -125,7 +139,8 @@ CMakeFiles/HomeWork5.dir/wordstore13.c.s: cmake_force
 HomeWork5_OBJECTS = \
 "CMakeFiles/HomeWork5.dir/fl.c.obj" \
 "CMakeFiles/HomeWork5.dir/process.c.obj" \
-"CMakeFiles/HomeWork5.dir/process_records.c.obj" \
+"CMakeFiles/HomeWork5.dir/process_record.c.obj" \
+"CMakeFiles/HomeWork5.dir/mail_merge.c.obj" \
 "CMakeFiles/HomeWork5.dir/wordstore13.c.obj"
 
 # External object files for target HomeWork5
@@ -133,13 +148,14 @@ HomeWork5_EXTERNAL_OBJECTS =
 
 HomeWork5.exe: CMakeFiles/HomeWork5.dir/fl.c.obj
 HomeWork5.exe: CMakeFiles/HomeWork5.dir/process.c.obj
-HomeWork5.exe: CMakeFiles/HomeWork5.dir/process_records.c.obj
+HomeWork5.exe: CMakeFiles/HomeWork5.dir/process_record.c.obj
+HomeWork5.exe: CMakeFiles/HomeWork5.dir/mail_merge.c.obj
 HomeWork5.exe: CMakeFiles/HomeWork5.dir/wordstore13.c.obj
 HomeWork5.exe: CMakeFiles/HomeWork5.dir/build.make
 HomeWork5.exe: CMakeFiles/HomeWork5.dir/linklibs.rsp
 HomeWork5.exe: CMakeFiles/HomeWork5.dir/objects1.rsp
 HomeWork5.exe: CMakeFiles/HomeWork5.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\MS in CS\CSCI E-26\projects\HomeWork5\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable HomeWork5.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\MS in CS\CSCI E-26\projects\HomeWork5\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable HomeWork5.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\HomeWork5.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
