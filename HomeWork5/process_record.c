@@ -109,7 +109,7 @@ int process_field(int c, int mode, char field[], int * field_count)
 {
     if(c == '=')
     {
-        if(check_bounds(MAXFLD, field_count))
+        if(check_bounds(MAXFLD, *field_count))
             field[(*field_count)] = '\0'; // Terminate array
         mode = VALUE;
     }
@@ -117,7 +117,7 @@ int process_field(int c, int mode, char field[], int * field_count)
         fatal("Field found without placeholder for value", "");
     else
     {
-        if(check_bounds(MAXFLD, field_count)) // Check bounds
+        if(check_bounds(MAXFLD, *field_count)) // Check bounds
             field[(*field_count)++] = c;
     }
 
@@ -149,7 +149,7 @@ int process_value(int c, int mode,
     }
     else
     {
-        if(check_bounds(MAXFLD, value_count))
+        if(check_bounds(MAXFLD, *value_count))
             value[(*value_count)++] = c; // Put the character in correct spot
     }
 

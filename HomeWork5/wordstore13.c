@@ -227,6 +227,24 @@ void
 clear_table(symtab_t *tp)
 {
 	/* under construction */
+
+    struct link * curr = tp->current_link;
+
+    tp->head.next = NULL; // Set head to null
+
+    while(curr != NULL)
+    {
+        // Keep a handle to avoid losing reference
+        struct link * temp = curr;
+
+        free(curr->val); // TODO - check about this
+        free(curr->word);
+        curr = curr->next;
+
+        free(temp); // Free link
+    }
+
+    free_table(tp);
 }
 	
 /*
