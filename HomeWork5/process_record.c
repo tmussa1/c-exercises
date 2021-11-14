@@ -45,25 +45,26 @@ int	get_record(symtab_t * tp, FILE *fp)
         switch(mode){ // Starts on white space state
             case WHITE_SPACE:
                 mode = process_space(c, mode, field, &field_count);
-                if(mode == EXIT) break; // Reached EOF or record delimiter
+                if(mode == EXIT) return YES; // Reached EOF or record delimiter
             break;
             case FIELD: // Process fields
                 mode = process_field(c, mode, field, &field_count);
             break;
             case VALUE:
                 mode = process_value(c, mode, value, &value_count, field, tp);
-                if(mode == WHITE_SPACE) {
+                if(mode == WHITE_SPACE || mode == EXIT) {
                     value_count = field_count = 0; // Reset field and value counts
-                    field[field_count] = value[value_count] = '\0'; // Clear string
+                    *field = *value = '\0'; // Clear string
                 }
-                else if(mode == EXIT) break;
+                if(mode == EXIT) return YES;
             break;
         }
     }
+    // TODO - don't close stdin, check err rewind
 
-    fclose(fp);
+   // fclose(fp);
 
-    return YES; // TODO - check what to return
+    return NO; // TODO - check what to return
 }
 
 /**
@@ -82,6 +83,8 @@ int process_space(int c, int mode, char field[], int * field_count)
         fatal("Value found without field name", "");
     else if(c == EOF || c == REDELIM)
         return EXIT; // We are done and can exit
+    else if( c == FDELIM)
+        return mode;
     else if(!isspace(c))
     {
         field[(*field_count)++] = c; // Store character
@@ -109,7 +112,7 @@ int process_field(int c, int mode, char field[], int * field_count)
             field[(*field_count)] = '\0'; // Terminate array
         mode = VALUE;
     }
-    else if(c == FDELIM || c == REDELIM || c == EOF)
+    else if(c == FDELIM || c == REDELIM || c == EOF) // TODO - take out EOF
         fatal("Field found without placeholder for value", "");
     else
     {

@@ -21,7 +21,7 @@ int main(int ac, char *av[])
 	 * 	check that there is at least one arg: the format file
 	 */
 
-	if ( ac == 1 )
+	if ( ac == 1 ) // TODO - this may count a - option, options and fmt may come in any order
 		fatal("usage: fl format [datafile..]","");
 
 	/*
@@ -38,7 +38,7 @@ int main(int ac, char *av[])
 
 	/* ... process data from stdin ... */
 
-	process(fpfmt, stdin);
+	process(fpfmt, stdin); // TODO - read multiple files
 	fclose(fpfmt);
 	return 0;
 }

@@ -1,3 +1,0 @@
-D:/MS in CS/CSCI E-26/projects/HomeWork5/cmake-build-debug/CMakeFiles/HomeWork5.dir
-D:/MS in CS/CSCI E-26/projects/HomeWork5/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/MS in CS/CSCI E-26/projects/HomeWork5/cmake-build-debug/CMakeFiles/rebuild_cache.dir

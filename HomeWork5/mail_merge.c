@@ -26,6 +26,8 @@ void mailmerge(symtab_t * tp, FILE * fp)
     int c, mode = TEXT, field_count = 0;
     char field_holder[MAXFLD]; // Store field_name placeholder
 
+    rewind(fp); // TODO - check error
+
     while((c = fgetc(fp)) != EOF)
     {
         switch(mode)
@@ -40,7 +42,7 @@ void mailmerge(symtab_t * tp, FILE * fp)
         }
     }
 
-    fclose(fp);
+    //fclose(fp);
 }
 
 
@@ -77,12 +79,12 @@ int process_place_holder(symtab_t * tp,
 {
     if(c == '%') // End of placeholder
     {
-        if(strlen(field_holder) > 0 && (*field_count) < MAXFLD)
+        if(*field_count > 0)
         {
             field_holder[(*field_count)] = '\0';
-            printf("%s", lookup(tp, field_holder)); // Print value
+            printf("%s", lookup(tp, field_holder) == NULL ? "" : lookup(tp, field_holder)); // Print value
             *field_count = 0;
-            field_holder[(*field_count)] = '\0';
+            *field_holder = '\0';
             mode = TEXT; // Change to text state
         }
         else // User may want to print '%' if the string in between is null
@@ -92,7 +94,7 @@ int process_place_holder(symtab_t * tp,
         fatal("Need to close field place holder", "");
     else
     {
-        field_holder[(*field_count)++] = c; // Store the placeholder
+        if(*field_count < MAXFLD - 1) field_holder[(*field_count)++] = c; // Store the placeholder
     }
 
     return mode;
