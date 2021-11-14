@@ -16,6 +16,7 @@ int main(int ac, char *av[])
 {
 	FILE *fpfmt;
 	myname = *av;
+    char field_delimiter = ';', record_delimiter = '\n';
 
 	/*
 	 * 	check that there is at least one arg: the format file
@@ -39,7 +40,7 @@ int main(int ac, char *av[])
 	/* ... process data from stdin ... */
     // TODO - read multiple files
     // TODO - this may count a - option, options and fmt may come in any order
-	process(fpfmt, stdin);
+	process(fpfmt, stdin, field_delimiter, record_delimiter);
 	fclose(fpfmt);
 	return 0;
 }

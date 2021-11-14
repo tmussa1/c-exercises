@@ -18,15 +18,12 @@
 #define VALUE 4
 #define EXIT 5
 
-#define REDELIM '\n'
-#define FDELIM ';'
-
 /**
 * Function declarations
 */
-int process_space(int c, int , char [], int *);
-int process_field(int, int, char [], int *);
-int process_value(int, int, char [], int *, char[], symtab_t *);
+int process_space(int c, int , char [], int *, char, char);
+int process_field(int, int, char [], int *, char, char);
+int process_value(int, int, char [], int *, char[], symtab_t *, char, char);
 int has_room(int, int);
 
 // TODO - get RDELIM and FDELIM from env
@@ -38,7 +35,7 @@ int has_room(int, int);
  * @param tp, @param fp
  * @return YES or NO, throws exception for processing error
  */
-int	get_record(symtab_t * tp, FILE *fp)
+int	get_record(symtab_t * tp, FILE *fp, char fdelim, char rdelim)
 {
     int c, mode = WHITE_SPACE, field_count = 0, value_count = 0;
     char field[MAXFLD], value[MAXVAL]; // Stores field and value
@@ -46,14 +43,14 @@ int	get_record(symtab_t * tp, FILE *fp)
     while((c = fgetc(fp)) != EOF){
         switch(mode){ // Starts on white space state
             case WHITE_SPACE:
-                mode = process_space(c, mode, field, &field_count);
-                if(mode == EXIT) return YES; // Reached EOF or record delimiter
+                mode = process_space(c, mode, field, &field_count, fdelim, rdelim);
+                if(mode == EXIT) return YES; // Reached record delimiter
             break;
             case FIELD: // Process fields
-                mode = process_field(c, mode, field, &field_count);
+                mode = process_field(c, mode, field, &field_count, fdelim, rdelim);
             break;
             case VALUE:
-                mode = process_value(c, mode, value, &value_count, field, tp);
+                mode = process_value(c, mode, value, &value_count, field, tp, fdelim, rdelim);
                 if(mode == WHITE_SPACE || mode == EXIT) {
                     value_count = field_count = 0; // Reset field and value counts
                     *field = *value = '\0'; // Clear string
@@ -62,7 +59,7 @@ int	get_record(symtab_t * tp, FILE *fp)
             break;
         }
     }
-    // TODO - don't close stdin, check err rewind
+    // TODO - don't close stdin, check err rewind, comment more
 
     return NO; // TODO - check what to return
 }
@@ -77,13 +74,14 @@ int	get_record(symtab_t * tp, FILE *fp)
  * @param field_count
  * @return mode, throws fatal exception
  */
-int process_space(int c, int mode, char field[], int * field_count)
+int process_space(int c, int mode, char field[], int * field_count,
+                  char fdelim, char rdelim)
 {
     if(c == '=')
         fatal("Value found without field name", "");
-    else if(c == EOF || c == REDELIM)
+    else if(c == rdelim)
         return EXIT; // We are done and can exit
-    else if( c == FDELIM)
+    else if( c == fdelim)
         return mode;
     else if(!isspace(c))
     {
@@ -104,7 +102,7 @@ int process_space(int c, int mode, char field[], int * field_count)
  * @param field_count
  * @return mode
  */
-int process_field(int c, int mode, char field[], int * field_count)
+int process_field(int c, int mode, char field[], int * field_count, char fdelim, char rdelim)
 {
     if(c == '=')
     {
@@ -112,7 +110,7 @@ int process_field(int c, int mode, char field[], int * field_count)
             field[(*field_count)] = '\0'; // Terminate array
         mode = VALUE;
     }
-    else if(c == FDELIM || c == REDELIM || c == EOF) // TODO - take out EOF
+    else if(c == fdelim || c == rdelim)
         fatal("Field found without placeholder for value", "");
     else
     {
@@ -129,10 +127,10 @@ int process_field(int c, int mode, char field[], int * field_count)
  * @param value, @param value_count, @param field , @param field_count
  * @return mode
  */
-int process_value(int c, int mode,
-                  char value[], int *value_count, char field[], symtab_t * tp)
+int process_value(int c, int mode, char value[], int *value_count,
+                  char field[], symtab_t * tp, char fdelim, char rdelim)
 {
-    if(c == REDELIM || c == FDELIM || c == EOF) {
+    if(c == fdelim || c == rdelim) {
         value[(*value_count)] = '\0'; // Terminate array
 
         if (in_table(tp, field) == YES)
@@ -146,7 +144,7 @@ int process_value(int c, int mode,
                 fatal("Can not insert record", value);
         }
         // Record was successfully inserted
-        mode = c == REDELIM || c == EOF ?  EXIT : WHITE_SPACE;
+        mode = c == rdelim ?  EXIT : WHITE_SPACE;
     }
     else
     {

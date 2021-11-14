@@ -14,14 +14,14 @@
  *	history: 2020-11-06 added int type and return 0 (10q VP)
  *	history: 2012-11-28 added free_table (10q BW)
  **/
-int process(FILE *fmt, FILE *data)
+int process(FILE *fmt, FILE *data, char fdelim, char rdelim)
 {
 	symtab_t *tab;
 
 	if ( (tab = new_table()) == NULL )
 		fatal("Cannot create storage object","");
 
-	while ( get_record(tab,data) != NO )/* while more data	*/
+	while ( get_record(tab,data, fdelim, rdelim) != NO )/* while more data	*/
 	{
 		mailmerge( tab, fmt );		/* merge with format	*/
 		clear_table(tab);		/* discard data		*/
