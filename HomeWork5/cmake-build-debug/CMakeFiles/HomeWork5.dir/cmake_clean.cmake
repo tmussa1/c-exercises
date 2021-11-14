@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/HomeWork5.dir/fl.c.obj"
   "CMakeFiles/HomeWork5.dir/process.c.obj"
+  "CMakeFiles/HomeWork5.dir/process_records.c.obj"
   "CMakeFiles/HomeWork5.dir/wordstore13.c.obj"
   "HomeWork5.exe"
   "HomeWork5.exe.manifest"

@@ -176,6 +176,30 @@ process.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\HomeWork5.dir\build.make CMakeFiles/HomeWork5.dir/process.c.s
 .PHONY : process.c.s
 
+process_records.obj: process_records.c.obj
+.PHONY : process_records.obj
+
+# target to build an object file
+process_records.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HomeWork5.dir\build.make CMakeFiles/HomeWork5.dir/process_records.c.obj
+.PHONY : process_records.c.obj
+
+process_records.i: process_records.c.i
+.PHONY : process_records.i
+
+# target to preprocess a source file
+process_records.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HomeWork5.dir\build.make CMakeFiles/HomeWork5.dir/process_records.c.i
+.PHONY : process_records.c.i
+
+process_records.s: process_records.c.s
+.PHONY : process_records.s
+
+# target to generate assembly for a file
+process_records.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HomeWork5.dir\build.make CMakeFiles/HomeWork5.dir/process_records.c.s
+.PHONY : process_records.c.s
+
 wordstore13.obj: wordstore13.c.obj
 .PHONY : wordstore13.obj
 
@@ -215,6 +239,9 @@ help:
 	@echo ... process.obj
 	@echo ... process.i
 	@echo ... process.s
+	@echo ... process_records.obj
+	@echo ... process_records.i
+	@echo ... process_records.s
 	@echo ... wordstore13.obj
 	@echo ... wordstore13.i
 	@echo ... wordstore13.s

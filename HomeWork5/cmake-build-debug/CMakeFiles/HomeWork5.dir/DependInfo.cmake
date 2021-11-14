@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "D:/MS in CS/CSCI E-26/projects/HomeWork5/fl.c" "D:/MS in CS/CSCI E-26/projects/HomeWork5/cmake-build-debug/CMakeFiles/HomeWork5.dir/fl.c.obj"
   "D:/MS in CS/CSCI E-26/projects/HomeWork5/process.c" "D:/MS in CS/CSCI E-26/projects/HomeWork5/cmake-build-debug/CMakeFiles/HomeWork5.dir/process.c.obj"
+  "D:/MS in CS/CSCI E-26/projects/HomeWork5/process_records.c" "D:/MS in CS/CSCI E-26/projects/HomeWork5/cmake-build-debug/CMakeFiles/HomeWork5.dir/process_records.c.obj"
   "D:/MS in CS/CSCI E-26/projects/HomeWork5/wordstore13.c" "D:/MS in CS/CSCI E-26/projects/HomeWork5/cmake-build-debug/CMakeFiles/HomeWork5.dir/wordstore13.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

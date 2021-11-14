@@ -9,5 +9,6 @@ add_executable(HomeWork5
         fl.c
         fl.h
         process.c
+        process_records.c
         wordstore13.c
         ws13.h)
