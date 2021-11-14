@@ -18,8 +18,8 @@
 #define VALUE 4
 #define EXIT 5
 
-#define REDELIM '\n' // TODO - get this from env
-#define FDELIM ';' // TODO - get this from env
+#define REDELIM '\n'
+#define FDELIM ';'
 
 /**
 * Function declarations
@@ -28,6 +28,8 @@ int process_space(int c, int , char [], int *);
 int process_field(int, int, char [], int *);
 int process_value(int, int, char [], int *, char[], symtab_t *);
 int has_room(int, int);
+
+// TODO - get RDELIM and FDELIM from env
 
 /**
  * Driver function for reading records. Delegates to helper functions
@@ -61,8 +63,6 @@ int	get_record(symtab_t * tp, FILE *fp)
         }
     }
     // TODO - don't close stdin, check err rewind
-
-   // fclose(fp);
 
     return NO; // TODO - check what to return
 }

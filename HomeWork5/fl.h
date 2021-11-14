@@ -11,6 +11,6 @@
  */
 
 int	get_record(symtab_t *, FILE *);
-void	mailmerge( symtab_t *, FILE *);
+void mailmerge( symtab_t *, FILE *);
 int	process(FILE*, FILE*);
-void	fatal(char *, char *);
+void fatal(char *, char *);

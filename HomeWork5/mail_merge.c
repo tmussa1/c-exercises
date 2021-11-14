@@ -1,12 +1,11 @@
 #include	<stdio.h>
-#include <string.h>
 #include	"fl.h"
 #include	"ws13.h"
 
 /**
  * Finite state machine stages
  */
-#define PLACE_HOLDER 5 // TODO - ask about name collision
+#define PLACE_HOLDER 5
 #define TEXT 6
 #define EXIT 7
 
@@ -26,23 +25,24 @@ void mailmerge(symtab_t * tp, FILE * fp)
     int c, mode = TEXT, field_count = 0;
     char field_holder[MAXFLD]; // Store field_name placeholder
 
-    rewind(fp); // TODO - check error
+    rewind(fp);
+    // TODO - check error
+    // TODO - ask Bruce about returning 2 sets of things
+    // TODO - ask about name collision
 
     while((c = fgetc(fp)) != EOF)
     {
         switch(mode)
         {
             case TEXT:
-                mode = process_text(c, mode); // TODO - ask Bruce about returning 2 sets of things
+                mode = process_text(c, mode);
                 if(mode == EXIT) break; // Exit reaching EOF
             break;
-            case PLACE_HOLDER:
+            case PLACE_HOLDER: // Read field place holder
                 mode = process_place_holder(tp, c, mode, field_holder, &field_count);
             break;
         }
     }
-
-    //fclose(fp);
 }
 
 
@@ -67,11 +67,7 @@ int process_text(int c, int mode)
 
 /**
  * Processes place holder by looking up the value when getting to closing tag
- * @param tp
- * @param c
- * @param mode
- * @param field_holder
- * @param field_count
+ * @param tp, @param c, @param mode, @param field_holder, @param field_count
  * @return mode
  */
 int process_place_holder(symtab_t * tp,
@@ -82,8 +78,9 @@ int process_place_holder(symtab_t * tp,
         if(*field_count > 0)
         {
             field_holder[(*field_count)] = '\0';
-            printf("%s", lookup(tp, field_holder) == NULL ? "" : lookup(tp, field_holder)); // Print value
-            *field_count = 0;
+            char * value = lookup(tp, field_holder);
+            printf("%s", value == NULL ? "" : value); // Print value
+            *field_count = 0; // Reset field holder
             *field_holder = '\0';
             mode = TEXT; // Change to text state
         }

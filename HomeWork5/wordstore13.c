@@ -234,7 +234,7 @@ clear_table(symtab_t *tp)
         // Keep a handle to avoid losing reference
         struct link * temp = curr;
 
-        free(curr->val); // TODO - check about this, delete cmake
+        free(curr->val); // Free strings
         free(curr->word);
 
         curr = curr->next;
@@ -243,8 +243,6 @@ clear_table(symtab_t *tp)
     }
 
     tp->head.next = NULL; // Set head to null
-
-    //free_table(tp);
 }
 	
 /*
