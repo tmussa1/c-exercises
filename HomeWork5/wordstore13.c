@@ -208,8 +208,8 @@ delete( symtab_t *tp, char str[] )
 	struct link *one_to_delete;
 
 	for( linkp = tp->head.next ; linkp ; linkp = linkp->next )
-		if ( strcmp(linkp->next->word, str) == 0 )
-		{
+		if ( linkp->next != NULL && strcmp(linkp->next->word, str) == 0 )
+		{ // Fixed null pointer exception on the last iteration
 			one_to_delete = linkp->next;
 			linkp->next = linkp->next->next;
 			free( one_to_delete->word );
