@@ -59,9 +59,8 @@ int	get_record(symtab_t * tp, FILE *fp, char fdelim, char rdelim)
             break;
         }
     }
-    // TODO - don't close stdin, check err rewind, comment more
 
-    return NO; // TODO - check what to return
+    return NO;
 }
 
 /**

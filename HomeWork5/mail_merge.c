@@ -26,9 +26,6 @@ void mailmerge(symtab_t * tp, FILE * fp)
     char field_holder[MAXFLD]; // Store field_name placeholder
 
     rewind(fp);
-    // TODO - check error
-    // TODO - ask Bruce about returning 2 sets of things
-    // TODO - ask about name collision
 
     while((c = fgetc(fp)) != EOF)
     {
@@ -82,12 +79,11 @@ int process_place_holder(symtab_t * tp,
             printf("%s", value == NULL ? "" : value); // Print value
             *field_count = 0; // Reset field holder
             *field_holder = '\0';
-            mode = TEXT; // Change to text state
         }
         else { // User may want to print '%' if the string in between is null
             putchar(c);
-            mode = TEXT;
         }
+        mode = TEXT; // Change to text state
     }
     else if(c == EOF) // Placeholder must be closed
         fatal("Need to close field place holder", "");
