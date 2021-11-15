@@ -148,7 +148,7 @@ int process_value(int c, int mode, char value[], int *value_count,
     }
     else
     {
-        if(has_room(MAXFLD, *value_count))
+        if(has_room(MAXVAL, *value_count))
             value[(*value_count)++] = c; // Put the character in correct spot
     }
 

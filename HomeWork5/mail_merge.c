@@ -84,8 +84,10 @@ int process_place_holder(symtab_t * tp,
             *field_holder = '\0';
             mode = TEXT; // Change to text state
         }
-        else // User may want to print '%' if the string in between is null
+        else { // User may want to print '%' if the string in between is null
             putchar(c);
+            mode = TEXT;
+        }
     }
     else if(c == EOF) // Placeholder must be closed
         fatal("Need to close field place holder", "");
