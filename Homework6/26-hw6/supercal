@@ -1,0 +1,125 @@
+#!/bin/sh
+#
+#    supercal: extended calendar program
+#              Accepts month names, month ranges and years
+#    usage: supercal  [monthname| month range] year
+
+     # TODO - handle the case with no year and month
+
+     # Driver function that reads in list of arguments
+     # and delegates to helper functions that process
+     # months, month ranges and years
+     main()
+     {
+
+        MONTHS="" # Stores list of months between executions
+
+         for arg in "$@"
+         do
+            if [ is_year $arg ] # A number bigger than 12 is considered a year
+            then
+               MONTHS=$(process_year $MONTHS arg)
+            elif [ is_month $arg ] # Uses names2num to get the index of a month
+            then
+               MONTHS=$(process_month $MONTHS arg)
+            elif [ is_range $arg ]
+            then 
+               shift 1 # Skip the - argument and process start to end month
+               MONTHS=$(process_range $MONTHS arg)
+            fi
+         done
+
+        YEAR=$(date "+%Y") # Use current year and print for each month that is left over 
+
+         for mon in $MONTHS # This won't execute if the months list is empty
+         do
+            /usr/bin/cal $mon $YEAR
+         done
+ 
+     }
+        
+     # Processes years. Prints  calendar for all of the months leading up to 
+     # when we saw the year argument. Prints calendar for all months if the months
+     # list is empty. 
+     process_year()
+     {
+       MONTHS="$1" # Months list
+       YEAR="$2"  # Year argument
+
+       if [ "$MONTHS" = "" ] # Print for all months if month list is empty
+       then
+           for i in $(seq 1 12)
+           do
+               /usr/bin/cal $i $YEAR
+           done
+       else 
+           for mon in $MONTHS # Print for all of the months leading up to this argument
+           do 
+               /usr/bin/cal $mon $YEAR
+           done
+       fi
+
+       MONTHS=""
+       echo $MONTHS
+     }
+
+     # Converts a month to its index and appends it at the end of the months list
+     process_month()
+     {
+         MONTHS="$1"
+         MONTH_NUM=$(./name2num $2) # Convert to its index
+
+         MONTHS="$MONTHS $MONTH_NUM" # Append it
+         echo $MONTHS
+     }
+     
+     # Lists out month between start and end then appends them to the months list
+     process_range()
+     {
+         MONTHS="$1" # Months list
+         MON=$("$1" | tr ' ' '\n' | tail -1) # Get the start month that was already read by process_month
+         END_MON=$(./name2num $2) # Get the end month
+         
+         while [ MON -le END_MON ]
+         do 
+             MON=$(expr $MON + 1) # Skip the first one because it was already read by process_month
+             MONTHS="$MONTHS $MON"
+         done
+
+         echo $MONTHS # Output the updated month
+     }
+
+     # Checks if a year is a number greater than 12
+     is_year()
+     {
+         if [ "$1" =~ ^[0-9]+$ -a "$1" -gt 12 ] # Year should be a number greater than 12 
+         then
+             return 0
+         else 
+             return 1 # Not a year otherwise
+         fi 
+     }
+
+     # Uses name2num to check for month validity
+     is_month()
+     {
+         if M=$(./name2num $1)
+         then
+             return 0
+         else 
+             return 1
+         fi
+     }
+     
+     # Checks if  we are in the middle of a range
+     is_range()
+     {
+        if [ "$1" = "-" ]
+        then 
+            return 0
+        else 
+            return 1
+        fi
+     }
+
+     main "$@"
