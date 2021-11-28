@@ -23,7 +23,7 @@
                MONTHS=""
             elif is_month $arg  # Uses names2num to get the index of a month
             then
-               MONTHS=$(process_month $MONTHS $arg)
+               MONTHS=$(process_month "$MONTHS" $arg)
             elif is_range $arg
             then 
                shift # Skip the - argument and process start to end month
