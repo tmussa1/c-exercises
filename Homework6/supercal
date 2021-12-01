@@ -14,27 +14,31 @@
 
         MONTHS="" # Stores list of months between executions
 
-         for arg in "$@"
+         while [ $# -gt 0 ]
          do
-            if [ is_year $arg ] # A number bigger than 12 is considered a year
+            arg="$1"
+            if is_year $arg  # A number bigger than 12 is considered a year
             then
-               MONTHS=$(process_year $MONTHS arg)
-            elif [ is_month $arg ] # Uses names2num to get the index of a month
+               process_year "$MONTHS" $arg
+               MONTHS=""
+            elif is_month $arg  # Uses names2num to get the index of a month
             then
-               MONTHS=$(process_month $MONTHS arg)
-            elif [ is_range $arg ]
+               MONTHS=$(process_month "$MONTHS" $arg)
+            elif is_range $arg
             then 
-               shift 1 # Skip the - argument and process start to end month
-               MONTHS=$(process_range $MONTHS arg)
+               shift # Skip the - argument and process start to end month
+               arg="$1"
+               MONTHS=$(process_range "$MONTHS" $arg)
             fi
+            shift
          done
 
         YEAR=$(date "+%Y") # Use current year and print for each month that is left over 
 
-         for mon in $MONTHS # This won't execute if the months list is empty
-         do
+        for mon in $MONTHS # This won't execute if the months list is empty
+        do
             /usr/bin/cal $mon $YEAR
-         done
+        done
  
      }
         
@@ -46,28 +50,25 @@
        MONTHS="$1" # Months list
        YEAR="$2"  # Year argument
 
-       if [ "$MONTHS" = "" ] # Print for all months if month list is empty
+       if [ "$1" = "" ] # Print for all months if month list is empty
        then
-           for i in $(seq 1 12)
-           do
-               /usr/bin/cal $i $YEAR
-           done
+            /usr/bin/cal $YEAR
        else 
-           for mon in $MONTHS # Print for all of the months leading up to this argument
+           for mon in $1 # Print for all of the months leading up to this argument
            do 
-               /usr/bin/cal $mon $YEAR
+                /usr/bin/cal $mon $YEAR
            done
        fi
 
        MONTHS=""
-       echo $MONTHS
+       echo $MONTHS # Reset months since all preceding ones are processed
      }
 
      # Converts a month to its index and appends it at the end of the months list
      process_month()
      {
          MONTHS="$1"
-         MONTH_NUM=$(./name2num $2) # Convert to its index
+         MONTH_NUM=$(./name2num "$2") # Convert to its index
 
          MONTHS="$MONTHS $MONTH_NUM" # Append it
          echo $MONTHS
@@ -77,13 +78,14 @@
      process_range()
      {
          MONTHS="$1" # Months list
-         MON=$("$1" | tr ' ' '\n' | tail -1) # Get the start month that was already read by process_month
+         MON=$(echo "$1" | tr ' ' '\n' | tail -1) # Get the start month that was already read by process_month
+         MON=$(./name2num $MON)
          END_MON=$(./name2num $2) # Get the end month
          
-         while [ MON -le END_MON ]
+         while [ $MON -lt $END_MON ]
          do 
              MON=$(expr $MON + 1) # Skip the first one because it was already read by process_month
-             MONTHS="$MONTHS $MON"
+             MONTHS="$MONTHS $MON" 
          done
 
          echo $MONTHS # Output the updated month
@@ -92,7 +94,13 @@
      # Checks if a year is a number greater than 12
      is_year()
      {
-         if [ "$1" =~ ^[0-9]+$ -a "$1" -gt 12 ] # Year should be a number greater than 12 
+         test "$1" -gt 12 2>/dev/null
+         if test $? = 2 
+         then 
+             return 1 
+         fi
+
+         if [ "$1" -gt 12 ] # Year should be a number greater than 12 
          then
              return 0
          else 
@@ -114,7 +122,7 @@
      # Checks if  we are in the middle of a range
      is_range()
      {
-        if [ "$1" = "-" ]
+        if [ X"$1" = X"-" ]
         then 
             return 0
         else 
