@@ -1,0 +1,58 @@
+#!/bin/sh
+#
+# Hangman game -
+# Usage -
+
+   main()
+   {
+      WORD='./random_word'
+      NUM_GUESSES=0
+      MAX_GUESSES=7
+      ANSWER=$(explode $WORD) 
+      GUESSES=""
+      CURRENT=$($WORD | tr [a-z] '-') 
+
+      while [ $NUM_GUESSES -le $MAX_GUESSES ]
+      do
+
+         cat hm.$NUM_GUESSES
+         C=$(read_one_char)
+         GUESSES="$C $GUESSES"
+         GUESSES=$(explode $GUESSES)
+         CURRENT=$(substitute $ANSWER $C $CURRENT)
+
+         echo Guesses: "$GUESSES"
+         echo Word: "$CURRENT"
+         echo Guess? $C
+
+         NUM_GUESSES=$(expr $NUM_GUESSES + 1)
+      done
+   }
+
+   substitute()
+   {
+      ANSWER="$1"
+      GUESS="$2"
+      OUTPUT="$3"
+      COUNT=0
+     
+      for c in $ANSWER
+      do
+        if [ $c = $GUESS ]
+        then
+            OUTPUT="${$OUTPUT:0:$COUNT}$c${$OUTPUT:(expr $COUNT + 1):${#OUTPUT}"
+        else 
+            OUTPUT="${$OUTPUT:0:$COUNT}-${$OUTPUT:(expr $COUNT + 1):${#OUTPUT}"
+        fi
+        COUNT=$(expr $COUNT + 1)
+      done
+
+      echo  $OUTPUT
+   }
+
+   explode()
+   {
+      echo "$1" | sed 's/./& /g'
+   }
+
+   main "$@"

@@ -1,0 +1,147 @@
+#!/bin/sh
+#
+# myrm - Has file removing/restoring capability like windows recycle bin
+# usage - Accepts options -t, -l, -L, -p, -a, -g as arugments to be explained below
+
+    main()
+    {
+    
+        option="$0"
+
+        while [ $# -gt 0 ]
+        do
+            first_char=${"$1":0:1}
+           
+            if is_option $first_char
+            then
+                option=${"$1":1:2}
+            else 
+                process_file "$1" $option
+            fi 
+
+	    shift 
+
+        done
+
+    }
+
+    process_file()
+    {
+        option="$2"
+        file="$1"
+       
+        case $(option) in
+               t*)  process_t "$file" $option ;;
+               l*)  process_l "$file" $option ;;
+               L*)  process_L "$file" $option ;;
+               p*)  process_p "$file" $option ;;
+               a*)  process_a "$file" $option ;;
+               g*)  process_g "$file" $option ;;
+               myrm*) process_no_option "$file" $option ;;
+               *)   echo "usage [myrm | -t | -l | -L | -p | -a | -g]"
+                    exit 1 ;;
+        esac 
+
+    }
+
+    process_no_option()
+    {
+       file="$1"
+
+       if [ ! -d $HOME/thrashroom ]
+       then
+           mkdir $HOME/thrashroom
+       fi
+       
+       if [ -f $HOME/thrashroom/$file ] || [ -d $HOME/thrashroom/$file ]
+       then
+          echo there is already a file called $file in the thrash y to replace it?
+          read ans
+
+          case $ans in
+              [Y|y]*) mv $file $HOME/thrashroom ;;
+              *)  echo Not overwriting file ;;
+          esac
+       else
+           mv $file $HOME/thrashroom
+       fi
+    }
+
+    process_t()
+    {
+        num_files=$(ls -la $HOME/thrashroom | wc -l) 
+	echo OK to delete these $num_files items y/n?
+        read ans
+
+        case $ans in
+           [Y|y]*) ls -A1 $HOME/thrashroom/* | xargs rm -r ;;
+           [N|n]*) echo Not deleting file ;;
+           *)  echo usage [Yy|Nn] 
+               exit 1 ;;
+        esac  
+    }
+
+    process_l()
+    {
+        echo ls -a
+
+    }
+
+    process_L()
+    {
+        echo ls -la
+    }
+
+
+    process_p()
+    {
+        files=$(echo ls -A1 $HOME/thrashroom/*)
+
+        for file in $files
+        do
+            echo file $file throw out or recover?
+            read ans
+            
+            case $ans in
+	        t*) rm -r "$file" ;;
+                r*) 
+                   if [ -f "$file" ] || [ -d "$file" ]
+                   then 
+                       echo there is already a file named $file in your directory y to replace it?
+                       read $replac
+
+                       if [ $replac -eq Y ] || [ $replac -eq y ]
+                       then
+                           mv "$file" .
+                       fi
+                   else 
+                       mv "$file" .
+                   fi
+                *) Not moving file ;;
+            esac 
+        done
+    }
+
+    process_a()
+    {
+        echo All of the other commands have been processed with a flag already
+    }
+
+    process_g()
+    {
+        file="$1"
+         
+        if [ ! -f "$file" ] && [ ! -d "$file" ]
+        then
+           echo File or Directory doesnot exist
+        else 
+            mv $file .
+        fi 
+    }
+
+    is_option()
+    {
+        return [ X"$1" = X"-" ]
+    }
+    
+    main "$@"
