@@ -30,14 +30,14 @@
         option="$2"
         file="$1"
        
-        case $(option) in
-               t*)  process_t "$file" $option ;;
-               l*)  process_l "$file" $option ;;
-               L*)  process_L "$file" $option ;;
-               p*)  process_p "$file" $option ;;
-               a*)  process_a "$file" $option ;;
-               g*)  process_g "$file" $option ;;
-               myrm*) process_no_option "$file" $option ;;
+        case $option in
+               -t)  process_t "$file" $option ;;
+               -l)  process_l "$file" $option ;;
+               -L)  process_L "$file" $option ;;
+               -p)  process_p "$file" $option ;;
+               -a)  process_a "$file" $option ;;
+               -g)  process_g "$file" $option ;;
+               myrm) process_no_option "$file" $option ;;
                *)   echo "usage [myrm | -t | -l | -L | -p | -a | -g]"
                     exit 1 ;;
         esac 

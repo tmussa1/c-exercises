@@ -5,54 +5,71 @@
 
    main()
    {
-      WORD='./random_word'
+      WORD=$(./random_word)
       NUM_GUESSES=0
       MAX_GUESSES=7
       ANSWER=$(explode $WORD) 
       GUESSES=""
-      CURRENT=$($WORD | tr [a-z] '-') 
+      CURRENT=$(echo "$WORD" | tr [a-z] '-') 
+      C=""
 
-      while [ $NUM_GUESSES -le $MAX_GUESSES ]
+      while true
       do
-
+         clear
          cat hm.$NUM_GUESSES
-         C=$(read_one_char)
-         GUESSES="$C $GUESSES"
-         GUESSES=$(explode $GUESSES)
-         CURRENT=$(substitute $ANSWER $C $CURRENT)
 
          echo Guesses: "$GUESSES"
          echo Word: "$CURRENT"
+         echo tofik: $WORD
          echo Guess? $C
 
-         NUM_GUESSES=$(expr $NUM_GUESSES + 1)
-      done
-   }
+         C=$(read_one_char)
 
-   substitute()
-   {
-      ANSWER="$1"
-      GUESS="$2"
-      OUTPUT="$3"
-      COUNT=0
-     
-      for c in $ANSWER
-      do
-        if [ $c = $GUESS ]
-        then
-            OUTPUT="${$OUTPUT:0:$COUNT}$c${$OUTPUT:(expr $COUNT + 1):${#OUTPUT}"
-        else 
-            OUTPUT="${$OUTPUT:0:$COUNT}-${$OUTPUT:(expr $COUNT + 1):${#OUTPUT}"
-        fi
-        COUNT=$(expr $COUNT + 1)
-      done
+         tput cup 10 0
 
-      echo  $OUTPUT
+         PREVIOUS_GUESS=$(echo $GUESSES | tr -cd $C | wc -c)
+         
+         if [ $PREVIOUS_GUESS -gt 0 ]
+         then
+             echo You already guessed $C
+         else 
+             GUESSES="$C $GUESSES"
+         fi
+
+         CURRENT=$(echo "$WORD" | sed "s/[^$GUESSES]/-/g")
+
+         if [ "$CURRENT" = "$WORD" ]
+         then
+             echo You guessed "$WORD" right
+             break
+         else
+
+             OCCURENCE=$(echo $ANSWER | tr -cd $C | wc -c)
+
+             if [ $OCCURENCE -eq 0 ]
+             then 
+                 NUM_GUESSES=$(expr $NUM_GUESSES + 1)
+             fi
+
+             if [ $NUM_GUESSES -gt $MAX_GUESSES ]
+             then
+                 echo Sorry the correct word was "$WORD"
+                 break
+             fi
+         fi
+      done
    }
 
    explode()
    {
       echo "$1" | sed 's/./& /g'
+   }
+
+   read_one_char()
+   {
+       stty -icanon min 1
+       dd ibs=1 count=1 status=noxfer 2>/dev/null
+       stty icanon
    }
 
    main "$@"
