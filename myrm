@@ -2,6 +2,7 @@
 #
 # myrm - Has file removing/restoring capability like windows recycle bin
 # usage - Accepts options -t, -l, -L, -p, -a, -g as arugments to be explained below
+# The logger statements also dictate the intent of the code
 
     main()
     {
@@ -10,11 +11,11 @@
 
         while [ $# -gt 0 ]
         do
-            first_char=${"$1":0:1}
            
-            if is_option $first_char
+            if is_option "$1"
             then
-                option=${"$1":1:2}
+                option="$1"
+                process_file "" $option # Process empty file if no option
             else 
                 process_file "$1" $option
             fi 
@@ -25,48 +26,62 @@
 
     }
 
+    # Driver function
     process_file()
     {
         option="$2"
         file="$1"
        
         case $option in
-               -t)  process_t "$file" $option ;;
-               -l)  process_l "$file" $option ;;
-               -L)  process_L "$file" $option ;;
-               -p)  process_p "$file" $option ;;
-               -a)  process_a "$file" $option ;;
-               -g)  process_g "$file" $option ;;
-               myrm) process_no_option "$file" $option ;;
+               *t)  process_t "$file" $option ;;
+               *l)  process_l "$file" $option ;;
+               *L)  process_L "$file" $option ;;
+               *p)  process_p "$file" $option ;;
+               *a)  process_a "$file" $option ;;
+               *g)  process_g "$file" $option ;;
+               *myrm) process_no_option "$file" $option ;;
                *)   echo "usage [myrm | -t | -l | -L | -p | -a | -g]"
                     exit 1 ;;
         esac 
 
     }
 
+   # Moves files to thrash room
     process_no_option()
     {
        file="$1"
 
        if [ ! -d $HOME/thrashroom ]
        then
+           echo Made directory $HOME/thrashroom
            mkdir $HOME/thrashroom
        fi
        
+       if [ ! -f $file ] && [ ! -d $file ]
+       then
+          echo The file you are trying to remove does not exist
+          return 1
+       fi
+
        if [ -f $HOME/thrashroom/$file ] || [ -d $HOME/thrashroom/$file ]
        then
           echo there is already a file called $file in the thrash y to replace it?
           read ans
 
           case $ans in
-              [Y|y]*) mv $file $HOME/thrashroom ;;
-              *)  echo Not overwriting file ;;
+              y*) mv $file $HOME/thrashroom 
+                  echo Moved $file to thrashroom
+                  return 0 ;;
+              *)  echo Not overwriting file 
+                  return 1;;
           esac
        else
+           echo Moved $file to thrashroom
            mv $file $HOME/thrashroom
        fi
     }
 
+    # Removes files completely
     process_t()
     {
         num_files=$(ls -la $HOME/thrashroom | wc -l) 
@@ -74,74 +89,112 @@
         read ans
 
         case $ans in
-           [Y|y]*) ls -A1 $HOME/thrashroom/* | xargs rm -r ;;
-           [N|n]*) echo Not deleting file ;;
+           y*)  ls -A1 $HOME/thrashroom/* | xargs rm -r
+                echo Permanently deleted $num_files of files from thrashroom
+                return 0 ;;
+           n*) echo Not deleting file 
+                return 1 ;;
            *)  echo usage [Yy|Nn] 
-               exit 1 ;;
+                return 1 ;;
         esac  
     }
 
+    # Lists what is in the thrash room
     process_l()
     {
-        echo ls -a
+        echo Files in thrash room below
+        ls -A $HOME/thrashroom
 
     }
 
     process_L()
     {
-        echo ls -la
+        echo Long list of files in the thrash room
+        ls -lA $HOME/thrashroom
     }
 
-
+    # Recovers or throws out all the files in the thrash room
     process_p()
     {
-        files=$(echo ls -A1 $HOME/thrashroom/*)
+        files=$(ls -A1 $HOME/thrashroom/*)
 
         for file in $files
         do
             echo file $file throw out or recover?
             read ans
             
-            case $ans in
-	        t*) rm -r "$file" ;;
+            if [ $? = 0 ]
+            then
+              case $ans in
+	        t*) rm $file 
+		    echo Threw out file $file ;;
                 r*) 
                    if [ -f "$file" ] || [ -d "$file" ]
                    then 
                        echo there is already a file named $file in your directory y to replace it?
-                       read $replac
+                       read replac
 
-                       if [ $replac -eq Y ] || [ $replac -eq y ]
-                       then
-                           mv "$file" .
+                       if [ $? = 0 ]
+                       then 
+                            case $replac in
+                               y*) echo Recovered $file file from thrashroom
+                                   mv $file . ;;
+                               *) Not removing file ;;
+                            esac
                        fi
                    else 
-                       mv "$file" .
-                   fi
-                *) Not moving file ;;
-            esac 
+                       echo Recovered $file file from thrashroom
+                       mv $file .
+                   fi ;;
+                *) Not moving file 
+                   return 1 ;;
+             esac
+           fi 
         done
     }
 
+    # Placeholder to show that this has been handled
     process_a()
     {
         echo All of the other commands have been processed with a flag already
     }
 
+    # Moves what is in the thrash room to current directory
     process_g()
     {
-        file="$1"
          
-        if [ ! -f "$file" ] && [ ! -d "$file" ]
+        file="$1"
+
+        if [ -z $file ]
+        then 
+           return 1 
+        fi
+ 
+        if [ ! -f $HOME/thrashroom/$file ] && [ ! -d $HOME/thrashroom/$file ]
         then
-           echo File or Directory doesnot exist
+           echo File or Directory does not exist
+           return 1
         else 
-            mv $file .
+            echo Moved $file file from thrashroom to current directory
+            mv $HOME/thrashroom/$file .
+            return 0
         fi 
     }
 
+    # Helper function to distinguish file vs argument
     is_option()
     {
-        return [ X"$1" = X"-" ]
+       OCCURENCE=$(echo "$1" | tr -cd '-' | wc -c)
+       
+       if [ $OCCURENCE -gt 0 ]
+       then 
+          case "$1" in
+             *[tlLpga]) return 0 ;;
+             *) return 1 ;;
+          esac
+       else 
+           return 1
+       fi 
     }
     
     main "$@"

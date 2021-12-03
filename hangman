@@ -1,16 +1,16 @@
 #!/bin/sh
 #
-# Hangman game -
-# Usage -
+# Hangman game - run ./hangman to play the game
+# Usage - You have upto 7 attempts to guess it right. Correct attempts don't count
 
    main()
    {
-      WORD=$(./random_word)
+      WORD=$(./random_word) # Get random word
       NUM_GUESSES=0
       MAX_GUESSES=7
       ANSWER=$(explode $WORD) 
       GUESSES=""
-      CURRENT=$(echo "$WORD" | tr [a-z] '-') 
+      CURRENT=$("$WORD" | tr [a-z] '-') 
       C=""
 
       while true
@@ -18,12 +18,11 @@
          clear
          cat hm.$NUM_GUESSES
 
-         echo Guesses: "$GUESSES"
+         echo Guesses: "$GUESSES" # Print outs
          echo Word: "$CURRENT"
-         echo tofik: $WORD
          echo Guess? $C
 
-         C=$(read_one_char)
+         C=$(read_one_char) # Auxiliary script to read characters
 
          tput cup 10 0
 
@@ -36,22 +35,23 @@
              GUESSES="$C $GUESSES"
          fi
 
-         CURRENT=$(echo "$WORD" | sed "s/[^$GUESSES]/-/g")
+         CURRENT=$(echo "$WORD" | sed "s/[^$GUESSES]/-/g") # Leave dashes for the
+         # incorrect guesses
 
          if [ "$CURRENT" = "$WORD" ]
          then
-             echo You guessed "$WORD" right
+             echo You guessed "$WORD" right # Successfully getting the answer
              break
          else
 
-             OCCURENCE=$(echo $ANSWER | tr -cd $C | wc -c)
+             OCCURENCE=$(echo $ANSWER | tr -cd $C | wc -c) # Count the number ofoccurences of current guess
 
-             if [ $OCCURENCE -eq 0 ]
+             if [ $OCCURENCE -eq 0 ] # Advance guesses if it hasn't been guessed before
              then 
                  NUM_GUESSES=$(expr $NUM_GUESSES + 1)
              fi
 
-             if [ $NUM_GUESSES -gt $MAX_GUESSES ]
+             if [ $NUM_GUESSES -gt $MAX_GUESSES ] # Bail out after max num of guesses
              then
                  echo Sorry the correct word was "$WORD"
                  break
@@ -60,6 +60,7 @@
       done
    }
 
+   # Provided by the professor
    explode()
    {
       echo "$1" | sed 's/./& /g'
@@ -72,4 +73,4 @@
        stty icanon
    }
 
-   main "$@"
+   main "$@" # Used for avoiding global variables
