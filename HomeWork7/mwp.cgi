@@ -13,6 +13,7 @@
         echo "<hr>"
         echo "</br>"
         echo "<h4>Customized Links for $PAGE_NAME</h4>"
+        echo "<center>"
         echo "<table>"
         ./fl -d"|" $PAGE_NAME.fmt data/$PAGE_NAME.tab # Reuse fl program to merge fmt with data
         echo "</table>"

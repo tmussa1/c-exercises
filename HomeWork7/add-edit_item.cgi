@@ -5,6 +5,8 @@
 # it takes the specified items and creates a new record on the
 # end of the named file in the data directory
 #
+        echo "Content-type: text/html"
+        echo ""
 
 	eval `./qryparse`		# receive form data
 	DATAFILE=$pagename.tab		# $pagename set by qryparse
