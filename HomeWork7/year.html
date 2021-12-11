@@ -2,52 +2,103 @@
 <html>
 <head>
 	<style type='text/css'>
-		td.season {
+	    .winter {
 			background-color: white;
-			text-align: center;
-			width: 50px;
-			vertical-align: center;
-			height: 35px;
 		}
-		td.winter { background-color: lightgray; }
-		td.spring { background-color: green; }
+
+		.spring {
+			background-color: green;
+		}
+
+		.summer {
+			background-color: yellow;
+		}
+
+		.fall {
+			background-color: orange;
+		}
 
 		body {
 			background-color: white;
 		}
 	</style>
-</head>
-<!--
-  this is the start of a table 
-  -->
-<body>
-<h4> A clickable calendar <hr> </h4>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<table border='1'>
-<!-- winter months in white -->
-<tr>
-    <td class='season winter'>
-	    <a href='http://cscie26.dce.harvard.edu/~name/mwp/xcal3.cgi?Jan'>Jan</a>
-    </td>
-    <td class='season winter'>
-	    <a href='http://cscie26.dce.harvard.edu/~name/mwp/xcal3.cgi?Feb'>Feb</a>
-    </td>
-    <td class='season winter'>
-	    <a href='http://cscie26.dce.harvard.edu/~name/mwp/xcal3.cgi?Mar'>Mar</a>
-    </td>
-</tr>
-<!-- spring months in green -->
-<tr>
-    <td class='season spring'>
-	    <a href='http://cscie26.dce.harvard.edu/~name/mwp/xcal3.cgi?Apr'>Apr</a>
-    </td>
-    <td class='season spring'>
-	    <a href='http://cscie26.dce.harvard.edu/~name/mwp/xcal3.cgi?May'>May</a>
-    </td>
-    <td class='season spring'>
-	    <a href='http://cscie26.dce.harvard.edu/~name/mwp/xcal3.cgi?Jun'>Jun</a>
-    </td>
-</tr>
-</table>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+<h4 class="ml-5 mt-3"> A clickable calendar <hr> </h4>
+
+<div class="card-group">
+	<div class="card">
+	  <div class="card-body winter">
+		<h5 class="card-title"><a href='http://cscie26.dce.harvard.edu/~tom976/mwp/xcal3.cgi?Jan'>January</a></h5>
+	  </div>
+	</div>
+	<div class="card">
+	  <div class="card-body winter">
+		<h5 class="card-title"><a href='http://cscie26.dce.harvard.edu/~tom976/mwp/xcal3.cgi?Feb'>February</a></h5>
+	  </div>
+	</div>
+	<div class="card">
+	  <div class="card-body winter">
+		<h5 class="card-title"><a href='http://cscie26.dce.harvard.edu/~tom976/mwp/xcal3.cgi?Mar'>March</a></h5>
+	  </div>
+	</div>
+</div>
+<div class="card-group">
+	<div class="card">
+	  <div class="card-body spring">
+		<h5 class="card-title"><a href='http://cscie26.dce.harvard.edu/~tom976/mwp/xcal3.cgi?Apr'>April</a></h5>
+	  </div>
+	</div>
+	<div class="card">
+	  <div class="card-body spring">
+		<h5 class="card-title"><a href='http://cscie26.dce.harvard.edu/~tom976/mwp/xcal3.cgi?May'>May</a></h5>
+	  </div>
+	</div>
+	<div class="card">
+	  <div class="card-body spring">
+		<h5 class="card-title"><a href='http://cscie26.dce.harvard.edu/~tom976/mwp/xcal3.cgi?Jun'>June</a></h5>
+	  </div>
+	</div>
+</div>
+<div class="card-group" style="background-color: yellow;">
+	<div class="card">
+	  <div class="card-body summer">
+		<h5 class="card-title"><a href='http://cscie26.dce.harvard.edu/~tom976/mwp/xcal3.cgi?Jul'>July</a></h5>
+	  </div>
+	</div>
+	<div class="card">
+	  <div class="card-body summer">
+		<h5 class="card-title"><a href='http://cscie26.dce.harvard.edu/~tom976/mwp/xcal3.cgi?Aug'>August</a></h5>
+	  </div>
+	</div>
+	<div class="card">
+	  <div class="card-body summer">
+		<h5 class="card-title"><a href='http://cscie26.dce.harvard.edu/~tom976/mwp/xcal3.cgi?Sep'>Sep</a></h5>
+	  </div>
+	</div>
+</div>
+<div class="card-group" style="background-color: orange;">
+	<div class="card">
+	  <div class="card-body fall">
+		<h5 class="card-title"><a href='http://cscie26.dce.harvard.edu/~tom976/mwp/xcal3.cgi?Oct'>October</a></h5>
+	  </div>
+	</div>
+	<div class="card">
+	  <div class="card-body fall">
+		<h5 class="card-title"><a href='http://cscie26.dce.harvard.edu/~tom976/mwp/xcal3.cgi?Nov'>November</a></h5>
+	  </div>
+	</div>
+	<div class="card">
+	  <div class="card-body fall">
+		<h5 class="card-title"><a href='http://cscie26.dce.harvard.edu/~tom976/mwp/xcal3.cgi?Dec'>Decemeber</a></h5>
+	  </div>
+	</div>
+</div>
+  
 </body>
 </html>
