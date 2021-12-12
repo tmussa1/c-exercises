@@ -23,8 +23,41 @@
 	fi
 
 	cd data
-	printf "title=%s|tcolor=%s|desc=%s|url=%s\n" \
-		"$title" "$titlecolor" "$descrip" "$url" >> $DATAFILE
+
+        if [ ! -f $DATAFILE ]
+        then
+            echo Page $DATAFILE doesnot exist. Press back button to re-enter data # Page has to exist
+            exit 1
+        else
+	    EXISTING=$(grep $title $DATAFILE)
+           
+            if [ ! -z $EXISTING ]
+            then
+                ! -z $titlecolor && sed -i "/title=$title|/s/tcolor=[^|]*|/tcolor=$titlecolor|/" $DATAFILE
+                ! -z $descrip && sed -i "/title=$title|/s/desc=[^|]*|/desc=$descrip|/" $DATAFILE
+                ! -z $url && sed -i "/title=$title|/s/url=[^|]/url=$url/" $DATAFILE
+            else
+
+                if [ -z $title ]  # can't be added without title
+                then
+                   echo Title doesnot exist. Press back button to re-enter data
+                   exit 1
+                fi
+
+                if [ -z $titlecolor ]
+                then
+                   titlecolor="white" # Default title color is white
+                fi
+
+		if [ -z $url  ]
+                then
+                   url="#" # Default url is "#" for same page
+                fi
+
+                printf "title=%s|tcolor=%s|desc=%s|url=%s\n" \
+		  "$title" "$titlecolor" "$descrip" "$url" >> $DATAFILE
+            fi
+        fi
 
 	if test $? -eq 0
 	then
