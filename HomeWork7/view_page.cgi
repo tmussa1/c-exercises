@@ -11,4 +11,11 @@
 	QUERY_STRING=$pagename
 	export QUERY_STRING
 
-	./mwp.cgi $pagename
+        if [ -z $pagename ] || [ ! -f data/$pagename.tab ]
+        then
+           echo "Content-type: text/html"
+           echo ""
+           echo Page with $pagename doesnot exist. Press back button to re-enter page name
+        else
+           ./mwp.cgi $pagename
+        fi
