@@ -5,9 +5,9 @@
 # it takes the specified items and creates a new record on the
 # end of the named file in the data directory
 #
-        echo "Content-type: text/html"
+        echo "Content-type: text/plain"
         echo ""
-
+	
 	eval `./qryparse`		# receive form data
 	DATAFILE=$pagename.tab		# $pagename set by qryparse
 
@@ -31,11 +31,11 @@
         else
 	    EXISTING=$(grep $title $DATAFILE)
            
-            if [ ! -z $EXISTING ]
+            if test ! -z "$EXISTING"
             then
-                ! -z $titlecolor && sed -i "/title=$title|/s/tcolor=[^|]*|/tcolor=$titlecolor|/" $DATAFILE
-                ! -z $descrip && sed -i "/title=$title|/s/desc=[^|]*|/desc=$descrip|/" $DATAFILE
-                ! -z $url && sed -i "/title=$title|/s/url=[^|]/url=$url/" $DATAFILE
+                test ! -z "$titlecolor" && sed -i "/title=$title|/s/tcolor=[^|]*|/tcolor=$titlecolor|/" $DATAFILE
+                test ! -z "$descrip" && sed -i "/title=$title|/s/desc=[^|]*|/desc=$descrip|/" $DATAFILE
+                test ! -z "$url" && sed -i "/title=$title|/s(url=[^|]*(url=$url(" $DATAFILE
             else
 
                 if [ -z $title ]  # can't be added without title
