@@ -24,32 +24,32 @@
 
 	cd data
 
-        if [ ! -f $DATAFILE ]
+        if [ ! -f $DATAFILE ] # Page doesnot exist
         then
             echo Page $DATAFILE doesnot exist. Press back button to re-enter data # Page has to exist
             exit 1
         else
-	    EXISTING=$(grep $title $DATAFILE)
+	    EXISTING=$(grep -w $title $DATAFILE)
            
-            if test ! -z "$EXISTING"
+            if test ! -z "$EXISTING" # Update existing data if provided
             then
                 test ! -z "$titlecolor" && sed -i "/title=$title|/s/tcolor=[^|]*|/tcolor=$titlecolor|/" $DATAFILE
                 test ! -z "$descrip" && sed -i "/title=$title|/s/desc=[^|]*|/desc=$descrip|/" $DATAFILE
                 test ! -z "$url" && sed -i "/title=$title|/s(url=[^|]*(url=$url(" $DATAFILE
             else
 
-                if [ -z $title ]  # can't be added without title
+                if test -z "$title"  # can't be added without title
                 then
                    echo Title doesnot exist. Press back button to re-enter data
                    exit 1
                 fi
 
-                if [ -z $titlecolor ]
+                if test -z "$titlecolor"
                 then
                    titlecolor="white" # Default title color is white
                 fi
 
-		if [ -z $url  ]
+		if test -z "$url"
                 then
                    url="#" # Default url is "#" for same page
                 fi

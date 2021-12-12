@@ -19,10 +19,10 @@
       exit 1
    fi
 
-   if grep -q $TO_DELETE $FILE # Error checking for record exists in file
+   if grep -q -w $TO_DELETE $FILE # Error checking for record exists in file
    then
       echo Deleted records containing $TO_DELETE from file $FILE
-      sed -i "/$TO_DELETE/d" $FILE # Delete in place
+      sed -i "/$TO_DELETE|/d" $FILE # Delete in place
    else
       echo $TO_DELETE not found in $FILE # Record not found in file
       exit 1
